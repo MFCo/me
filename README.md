@@ -1,2 +1,2 @@
-# me
-Personal website and experimentation
+# Personal website
+Personal website and experimentation, currently a WIP
