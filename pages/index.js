@@ -1,12 +1,15 @@
 import React from "react";
+import List from "../components/List";
 
-import styled from "styled-components";
+const Home = () => (
+  <List
+    items={[
+      { text: "I'm", color: "#ff0055" },
+      { text: "trying", color: "#0099ff" },
+      { text: "my", color: "#22cc88" },
+      { text: "not-best", color: "#ffaa00" },
+    ]}
+  />
+);
 
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`;
-
-export default function Home() {
-  return <Title>My page</Title>;
-}
+export default Home;
