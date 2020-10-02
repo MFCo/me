@@ -4,6 +4,7 @@ export const globalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
     font-family: Montserrat, sans-serif;
+    color: ${({ theme }) => theme.colors.text.primary};
   }
 
   html {
@@ -14,7 +15,6 @@ export const globalStyles = createGlobalStyle`
   padding: 0;
   margin: 0;
   background:  ${({ theme }) => theme.colors.background};
-  overflow: hidden;
 }
   
 `;

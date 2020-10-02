@@ -9,7 +9,7 @@ const List = ({ items }) => {
   const [selected, setSelected] = useState(0);
   return (
     <AnimateSharedLayout>
-      <Container>
+      <Container initial={{ borderRadius: 25 }}>
         {items.map((e, i) => (
           <ListItemText
             key={e.title + e.color}
