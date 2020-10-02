@@ -10,6 +10,7 @@ const Text = styled(motion.li)`
   color: ${({ theme }) => theme.colors.text.primary};
   list-style: none;
   padding: 0;
+  user-select: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 `;
