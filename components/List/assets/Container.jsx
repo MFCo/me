@@ -7,6 +7,7 @@ const Container = styled.ol`
   margin: 0 0 ${({ theme }) => theme.unit * 3}px 0;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 export default Container;
