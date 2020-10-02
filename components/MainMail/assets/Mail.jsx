@@ -7,6 +7,9 @@ const Mail = styled.a`
   color: ${({ theme }) => theme.colors.text.primary};
   padding: 0;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export default Mail;
