@@ -6,7 +6,7 @@ import ListItemText from "../ListItemText";
 import Container from "./assets/Container";
 
 const List = ({ items }) => {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(0);
   return (
     <AnimateSharedLayout>
       <Container>

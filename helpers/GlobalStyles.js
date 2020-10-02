@@ -14,10 +14,6 @@ export const globalStyles = createGlobalStyle`
   padding: 0;
   margin: 0;
   background:  ${({ theme }) => theme.colors.background};
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 }
   
