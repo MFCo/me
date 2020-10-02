@@ -11,6 +11,7 @@ const Text = styled(motion.li)`
   list-style: none;
   padding: 0;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 `;
 
 export default Text;
