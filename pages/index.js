@@ -4,6 +4,8 @@ import styled from "styled-components";
 import List from "../components/List";
 import Mail from "../components/MainMail";
 
+import { theme } from "../theme";
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -16,10 +18,10 @@ const Home = () => (
   <Container>
     <List
       items={[
-        { text: "I'm", color: "#ff0055" },
-        { text: "trying", color: "#0099ff" },
-        { text: "my", color: "#22cc88" },
-        { text: "not-best", color: "#ffaa00" },
+        { text: "Let's", color: theme.colors.red },
+        { text: "build", color: theme.colors.blue },
+        { text: "something", color: theme.colors.green },
+        { text: "meaningful", color: theme.colors.yellow },
       ]}
     />
     <Mail mail="marianococirio@gmail.com" />
