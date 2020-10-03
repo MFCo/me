@@ -13,7 +13,7 @@ import Underline from "./assets/Underline";
 const Home = () => (
   <Section id="experience" color={theme.colors.grey[100]}>
     <span>
-      <SectionTitle>Experience</SectionTitle>
+      <SectionTitle>MY CAREER PATH</SectionTitle>
       <Underline color={theme.colors.green} />
     </span>
     <SectionText>
