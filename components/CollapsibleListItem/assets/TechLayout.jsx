@@ -9,8 +9,12 @@ const TechLayout = styled(motion.span)`
   align-items: center;
   @media only screen and (max-width: ${({ theme }) =>
       theme.breakpoint.mobile}) {
-    ${({ mobile, theme }) =>
-      !mobile ? "display: none;" : `margin: ${theme.unit}px 0;`}
+    ${({ mobileHide, theme }) =>
+      mobileHide ? "display: none;" : `margin: ${theme.unit}px 0;`}
+  }
+  @media only screen and (min-width: ${({ theme }) =>
+      theme.breakpoint.mobile}) {
+    ${({ desktopHide }) => (desktopHide ? "display: none;" : "")}
   }
 `;
 

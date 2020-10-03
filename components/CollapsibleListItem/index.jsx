@@ -42,7 +42,7 @@ const ListItemText = ({ title, company, content, period, tech = [], logo }) => {
             <CompanyText layout>{company}</CompanyText>
             <TitleText layout>{title}</TitleText>
           </span>
-          <TechLayout layout>
+          <TechLayout layout mobileHide>
             {tech.map(e => (
               <Avatar logo={`/logos/${e}`} light />
             ))}
@@ -69,7 +69,7 @@ const ListItemText = ({ title, company, content, period, tech = [], logo }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <TechLayout layout mobile>
+            <TechLayout layout desktopHide>
               {tech.map(e => (
                 <Avatar logo={`/logos/${e}`} light />
               ))}
