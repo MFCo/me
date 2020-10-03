@@ -14,7 +14,7 @@ const ExperienceSection = () => (
   <Section id="experience" color={theme.colors.grey[100]}>
     <span>
       <SectionTitle>MY CAREER PATH</SectionTitle>
-      <Underline color={theme.colors.yellow} />
+      <Underline color={theme.colors.green} />
     </span>
     <SectionText>
       To start with, I think I should give some background info about myself. I
