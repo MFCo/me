@@ -9,6 +9,8 @@ import HeaderLayout from "./assets/HeaderLayout";
 import CompanyText from "./assets/CompanyText";
 import TitleText from "./assets/TitleText";
 import TitlesLayout from "./assets/TitlesLayout";
+import TechLayout from "./assets/TechLayout";
+
 import ExperienceText from "./assets/ExperienceText";
 
 import { theme } from "../../theme";
@@ -25,7 +27,7 @@ const calcDiff = (start, end) => {
   }`;
 };
 
-const ListItemText = ({ title, company, content, period, logo }) => {
+const ListItemText = ({ title, company, content, period, tech = [], logo }) => {
   const [open, setOpen] = useState(false);
   return (
     <Container
@@ -40,6 +42,11 @@ const ListItemText = ({ title, company, content, period, logo }) => {
             <CompanyText layout>{company}</CompanyText>
             <TitleText layout>{title}</TitleText>
           </span>
+          <TechLayout layout>
+            {tech.map((e) => (
+              <Avatar logo={`/logos/${e}`} light />
+            ))}
+          </TechLayout>
           <span>
             <ExperienceText layout>
               {`${period.start} - ${period.end || "Present"}`}
@@ -47,7 +54,7 @@ const ListItemText = ({ title, company, content, period, logo }) => {
             <ExperienceSubtext layout>
               {calcDiff(
                 moment(period.start),
-                period.end ? moment(period.end) : moment(),
+                period.end ? moment(period.end) : moment()
               )}
             </ExperienceSubtext>
           </span>
@@ -62,6 +69,11 @@ const ListItemText = ({ title, company, content, period, logo }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            <TechLayout layout mobile>
+              {tech.map((e) => (
+                <Avatar logo={`/logos/${e}`} light />
+              ))}
+            </TechLayout>
             <ContentText layout>{content}</ContentText>
           </motion.div>
         )}
@@ -76,6 +88,7 @@ ListItemText.propTypes = {
   content: PropTypes.string,
   period: PropTypes.shape({ start: PropTypes.string, end: PropTypes.string }),
   logo: PropTypes.string,
+  tech: PropTypes.array,
 };
 
 export default ListItemText;

@@ -13,6 +13,7 @@ const CollapsibleList = ({ items, title }) => {
       <ListTitle layout>{title}</ListTitle>
       {items.map((e, i) => (
         <CollapsibleListItem
+          tech={e.tech}
           key={e.title + e.company}
           title={e.title}
           company={e.company}

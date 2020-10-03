@@ -43,6 +43,7 @@ const Home = () => (
               title: "Frontend Engineer",
               period: { start: "Jun 2018", end: "Nov 2019" },
               logo: "/logos/mb.png",
+              tech: ["react.png", "graphql.png", "nextjs-logo.png"],
               content: `Developed the company web application using React; NextJS was chosen as SSR framework.
             Connected with backend using Apollo (graphQL). Product advisor in UX/UI related issues. Bridge between Product and Engineering team. Managed key features.`,
             },
@@ -51,6 +52,13 @@ const Home = () => (
               title: "Full-stack Engineer",
               period: { start: "Mar 2018", end: "May 2019" },
               logo: "/logos/sboost.png",
+              tech: [
+                "react.png",
+                "nextjs-logo.png",
+                "redux.png",
+                "node.png",
+                "loopback.png",
+              ],
               content: `Developed the company website using React; NextJS was chosen as SSR framework. Designed and implemented the website infrastructure, it's deployed in AWS.
             Developed Medo, a Patient Management Software, implemented the client-side web application by using React.js alongside Facebook’s Flux data model; the backend is API REST-based using Loopback.
             `,
