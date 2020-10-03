@@ -7,7 +7,7 @@ import { theme } from "../../theme";
 import Section from "./assets/Section";
 
 const Home = () => (
-  <Section color={theme.colors.red}>
+  <Section id="experience" color={theme.colors.red}>
     <AnimateSharedLayout>
       <CollapsibleList
         title="Engineering"
