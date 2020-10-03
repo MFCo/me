@@ -7,8 +7,6 @@ const AboveTheFold = styled(motion.div)`
   height: ${({ theme }) => theme.unit * 6}px;
   position: relative;
   margin-top: auto;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
 `;
 
 export default AboveTheFold;

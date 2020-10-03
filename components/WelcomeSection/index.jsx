@@ -20,7 +20,7 @@ const WelcomeSection = () => (
       ]}
     />
     <Mail mail="marianococirio@gmail.com" />
-    <Link to="experience" smooth duration={1}>
+    <Link to="experience" smooth duration={500}>
       <ScrollArrow
         animate={{
           scale: [1, 1.2, 1.2, 1, 1],

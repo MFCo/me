@@ -7,6 +7,13 @@ const SectionTitle = styled.h2`
   max-width: 110%;
   text-align: center;
   margin: 0;
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoint.mobile}) {
+    font-size: 3rem;
+
+    margin: 0 ${({ theme }) => theme.unit * 2}px 0
+      ${({ theme }) => theme.unit * 2}px;
+  }
 `;
 
 export default SectionTitle;
