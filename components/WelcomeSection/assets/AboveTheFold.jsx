@@ -6,6 +6,7 @@ const AboveTheFold = styled.div`
   flex-direction: column;
   min-height: 100vh;
   align-items: center;
+  position: relative;
 `;
 
 export default AboveTheFold;

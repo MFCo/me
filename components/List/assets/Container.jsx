@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.ul`
+const Container = styled.h1`
   display: flex;
   list-style: none;
   padding: 0;

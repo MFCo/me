@@ -13,6 +13,7 @@ import ExperienceText from "./assets/ExperienceText";
 
 import { theme } from "../../theme";
 import ExperienceSubtext from "./assets/ExperienceSubtext";
+import ContentText from "./assets/ContentText";
 
 const calcDiff = (start, end) => {
   end.add(1, "months");
@@ -61,7 +62,7 @@ const ListItemText = ({ title, company, content, period, logo }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <motion.p layout>{content}</motion.p>
+            <ContentText layout>{content}</ContentText>
           </motion.div>
         )}
       </AnimatePresence>
