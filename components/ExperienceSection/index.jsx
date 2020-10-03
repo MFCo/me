@@ -40,8 +40,8 @@ const ExperienceSection = () => (
       frameworks releases.
     </SectionText>
     <SectionText>
-      Currently my main coding goal is to build enjoyable User Experiences and
-      supporting it with Framer Motion. I truly believe in the
+      Currently, my main coding goal is to build enjoyable User Experiences
+      while minimizing performance drop. I truly believe in the
       <i> Product Engineer </i>
       as a role that will emerge soon, Engineers who get really involved in
       really understanding the problem space and empathizing with the users.
