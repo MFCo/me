@@ -43,7 +43,7 @@ const ListItemText = ({ title, company, content, period, tech = [], logo }) => {
             <TitleText layout>{title}</TitleText>
           </span>
           <TechLayout layout>
-            {tech.map((e) => (
+            {tech.map(e => (
               <Avatar logo={`/logos/${e}`} light />
             ))}
           </TechLayout>
@@ -54,7 +54,7 @@ const ListItemText = ({ title, company, content, period, tech = [], logo }) => {
             <ExperienceSubtext layout>
               {calcDiff(
                 moment(period.start),
-                period.end ? moment(period.end) : moment()
+                period.end ? moment(period.end) : moment(),
               )}
             </ExperienceSubtext>
           </span>
@@ -70,7 +70,7 @@ const ListItemText = ({ title, company, content, period, tech = [], logo }) => {
             exit={{ opacity: 0 }}
           >
             <TechLayout layout mobile>
-              {tech.map((e) => (
+              {tech.map(e => (
                 <Avatar logo={`/logos/${e}`} light />
               ))}
             </TechLayout>
