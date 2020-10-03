@@ -32,7 +32,10 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en" dir="ltr">
         <Head>
-          <title> Mariano Cocirio </title>
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat"
+            rel="stylesheet"
+          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const Text = styled(motion.li)`
+const Text = styled(motion.span)`
   font-size: 4.8rem;
   font-weight: 800;
   position: relative;
