@@ -8,8 +8,9 @@ const Container = styled(motion.ul)`
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: white;
+  background: ${({ theme }) => theme.colors.background};
   padding: ${({ theme }) => theme.unit * 3}px;
+  border: 1px solid ${({ theme }) => theme.colors.grey[200]};
   border-radius: ${({ theme }) => theme.unit * 3}px;
   margin: 0 0 ${({ theme }) => theme.unit * 3}px 0;
   @media only screen and (max-width: ${({ theme }) =>

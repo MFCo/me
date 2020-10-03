@@ -27,7 +27,14 @@ const calcDiff = (start, end) => {
   }`;
 };
 
-const ListItemText = ({ title, company, content, period, tech = [], logo }) => {
+const CollapsibleListItem = ({
+  title,
+  company,
+  content,
+  period,
+  tech = [],
+  logo,
+}) => {
   const [open, setOpen] = useState(false);
   return (
     <Container
@@ -82,7 +89,7 @@ const ListItemText = ({ title, company, content, period, tech = [], logo }) => {
   );
 };
 
-ListItemText.propTypes = {
+CollapsibleListItem.propTypes = {
   title: PropTypes.string,
   company: PropTypes.string,
   content: PropTypes.string,
@@ -91,4 +98,4 @@ ListItemText.propTypes = {
   tech: PropTypes.array,
 };
 
-export default ListItemText;
+export default CollapsibleListItem;
