@@ -8,6 +8,10 @@ const CustomLink = styled(Link)`
   cursor: pointer;
   margin: 0 0 0 -${({ theme }) => theme.unit * 3}px;
   -webkit-tap-highlight-color: transparent;
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoint.mobile}) {
+    bottom: ${({ theme }) => theme.unit * 15}px;
+  }
 `;
 
 export default CustomLink;

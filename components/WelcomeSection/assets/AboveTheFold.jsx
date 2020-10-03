@@ -7,7 +7,10 @@ const AboveTheFold = styled.div`
   min-height: 100vh;
   align-items: center;
   position: relative;
-  padding-bottom: ${({ theme }) => theme.unit * 8}px;
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoint.mobile}) {
+    padding-bottom: ${({ theme }) => theme.unit * 16}px;
+  }
 `;
 
 export default AboveTheFold;
