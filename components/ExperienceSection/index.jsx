@@ -56,7 +56,7 @@ const ExperienceSection = () => (
               title: "Frontend Engineer",
               period: { start: "Jun 2018", end: "Nov 2019" },
               logo: "/logos/mb.png",
-              tech: ["react.png", "graphql.png", "nextjs-logo.png"],
+              tech: ["react.png", "graphql.png", "nextjs-logo.jpg"],
               content: `Developed the company web application using React; NextJS was chosen as SSR framework.
             Connected with backend using Apollo (graphQL). Product advisor in UX/UI related issues. Bridge between Product and Engineering team. Managed key features.`,
             },
@@ -67,7 +67,7 @@ const ExperienceSection = () => (
               logo: "/logos/sboost.png",
               tech: [
                 "react.png",
-                "nextjs-logo.png",
+                "nextjs-logo.jpg",
                 "redux.png",
                 "node.png",
                 "loopback.png",
