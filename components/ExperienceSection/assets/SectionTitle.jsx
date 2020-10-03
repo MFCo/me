@@ -3,7 +3,7 @@ import styled from "styled-components";
 const SectionTitle = styled.h2`
   font-size: 4rem;
   font-weight: 800;
-  color: ${({ theme }) => theme.colors.grey[600]};
+  color: ${({ theme }) => theme.colors.text.primary};
   max-width: 110%;
   text-align: center;
   margin: 0;

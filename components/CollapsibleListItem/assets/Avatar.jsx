@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Avatar = styled(motion.div)`
   background-color: ${({ theme, light }) =>
-    light ? theme.colors.background : theme.colors.grey[500]};
+    light ? theme.colors.text.primary : theme.colors.grey[500]};
   min-width: ${({ theme }) => theme.unit * 5}px;
   min-height: ${({ theme }) => theme.unit * 5}px;
   max-width: ${({ theme }) => theme.unit * 5}px;
