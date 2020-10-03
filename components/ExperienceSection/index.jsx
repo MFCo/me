@@ -10,7 +10,7 @@ import SectionTitle from "./assets/SectionTitle";
 import SectionText from "./assets/SectionText";
 import Underline from "./assets/Underline";
 
-const Home = () => (
+const ExperienceSection = () => (
   <Section id="experience" color={theme.colors.grey[100]}>
     <span>
       <SectionTitle>MY CAREER PATH</SectionTitle>
@@ -96,4 +96,4 @@ const Home = () => (
   </Section>
 );
 
-export default Home;
+export default ExperienceSection;

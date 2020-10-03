@@ -8,9 +8,28 @@ import AboveTheFold from "./assets/AboveTheFold";
 import ScrollArrow from "./assets/ScrollArrow";
 import Arrow from "./assets/Arrow";
 import Link from "./assets/Link";
+import SocialContainer from "./assets/SocialContainer";
+import SocialLogo from "./assets/SocialLogo";
+
+const social = [
+  { logo: "logos/github.png", link: "https://github.com/MFCo" },
+  { logo: "logos/medium.png", link: "https://medium.com/@marianococirio" },
+  { logo: "logos/linkedin.png", link: "https://www.linkedin.com/in/mcocirio/" },
+  { logo: "logos/twitter.png", link: "https://twitter.com/MarianoCocirio" },
+];
 
 const WelcomeSection = () => (
   <AboveTheFold>
+    <SocialContainer>
+      {social.map(e => (
+        <SocialLogo
+          href={e.link}
+          target="_blank"
+          rel="noopener"
+          logo={e.logo}
+        />
+      ))}
+    </SocialContainer>
     <List
       items={[
         { text: "Let's", color: theme.colors.red },
