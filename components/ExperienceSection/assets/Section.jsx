@@ -7,7 +7,7 @@ const Section = styled.div`
   flex-direction: column;
   min-height: 100vh;
   padding: ${({ theme }) => theme.unit * 4}px 0;
-  background-color: ${({ color }) => `${color}CC`};
+  background-color: ${({ color }) => color};
 `;
 
 export default Section;

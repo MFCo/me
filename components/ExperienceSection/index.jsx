@@ -11,7 +11,7 @@ import SectionText from "./assets/SectionText";
 import Underline from "./assets/Underline";
 
 const Home = () => (
-  <Section id="experience" color={theme.colors.yellow}>
+  <Section id="experience" color={theme.colors.grey[200]}>
     <span>
       <SectionTitle>Experience</SectionTitle>
       <Underline color={theme.colors.green} />
