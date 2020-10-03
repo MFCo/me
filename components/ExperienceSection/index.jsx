@@ -26,10 +26,12 @@ const Home = () => (
     <SectionText>
       After doing some mandatory internships to get my degree I found myself
       really self-involved with Frontend Development and mostly curious about
-      why were we building stuff. This leads me to pursue a career as a Frontend
+      <i>{" why "}</i>
+      were we building stuff. This leads me to pursue a career as a Frontend
       Engineer, but after a couple of years I realized I wanted to be even more
-      involved in what to build, and why to build it so I ended up transitioning
-      to full-time Product Manager.
+      involved in
+      <i>{" what to build, and why to build it, "}</i>
+      so I ended up transitioning to full-time Product Manager.
     </SectionText>
     <InnerSection>
       <AnimateSharedLayout>
