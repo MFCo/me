@@ -51,7 +51,7 @@ const CollapsibleListItem = ({
           </span>
           <TechLayout layout mobileHide>
             {tech.map(e => (
-              <Avatar logo={`/logos/${e}`} light />
+              <Avatar key={`${e}out`} logo={`/logos/${e}`} light />
             ))}
           </TechLayout>
           <span>
@@ -78,7 +78,7 @@ const CollapsibleListItem = ({
           >
             <TechLayout layout desktopHide>
               {tech.map(e => (
-                <Avatar logo={`/logos/${e}`} light />
+                <Avatar key={`${e}in`} logo={`/logos/${e}`} light />
               ))}
             </TechLayout>
             <ContentText layout>{content}</ContentText>

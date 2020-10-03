@@ -8,9 +8,6 @@ const SocialContainer = styled.div`
   position: absolute;
   top: ${({ theme }) => theme.unit}px;
   right: ${({ theme }) => theme.unit}px;
-  @media only screen and (max-width: ${({ theme }) =>
-      theme.breakpoint.mobile}) {
-  }
 `;
 
 export default SocialContainer;

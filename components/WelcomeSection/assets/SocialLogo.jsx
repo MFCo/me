@@ -16,6 +16,13 @@ const SocialLogo = styled.a`
     background-repeat: no-repeat;
     
     `}
+
+@media only screen and (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  min-width: ${({ theme }) => theme.unit * 3}px;
+  min-height: ${({ theme }) => theme.unit * 3}px;
+  max-width: ${({ theme }) => theme.unit * 3}px;
+  max-height: ${({ theme }) => theme.unit * 3}px;
+  }
 `;
 
 export default SocialLogo;

@@ -23,6 +23,7 @@ const WelcomeSection = () => (
     <SocialContainer>
       {social.map(e => (
         <SocialLogo
+          key={e.logo}
           href={e.link}
           target="_blank"
           rel="noopener"
