@@ -9,4 +9,5 @@ export const theme = {
     grey: { 500: "#666", 200: "rgba(214, 214, 214, 0.5)" },
   },
   unit: 8,
+  breakpoint: { mobile: "600px" },
 };

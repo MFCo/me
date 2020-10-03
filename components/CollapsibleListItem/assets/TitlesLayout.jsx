@@ -3,6 +3,14 @@ import { motion } from "framer-motion";
 
 const TitlesLayout = styled(motion.span)`
   margin-left: ${({ theme }) => theme.unit * 2}px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  @media only screen and (max-width: 600px) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 `;
 
 export default TitlesLayout;

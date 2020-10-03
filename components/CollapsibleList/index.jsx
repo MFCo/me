@@ -16,6 +16,7 @@ const CollapsibleList = ({ items, title }) => {
           key={e.title + e.company}
           title={e.title}
           company={e.company}
+          period={e.period}
           content={e.content}
           logo={e.logo}
           selected={selected === i}
