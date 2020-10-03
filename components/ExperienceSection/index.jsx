@@ -33,6 +33,19 @@ const Home = () => (
       <i>{" what to build, and why to build it, "}</i>
       so I ended up transitioning to full-time Product Manager.
     </SectionText>
+    <SectionText>
+      Nowadays, I&apos;m getting closer to coding again after almost a year
+      dedicating most of my time to Product Management and relegating coding to
+      a place were I was just keeping myself up to date with main trends and
+      frameworks releases.
+    </SectionText>
+    <SectionText>
+      Currently my main coding goal is to build enjoyable User Experiences and
+      supporting it with Framer Motion. I truly believe in the
+      <i> Product Engineer </i>
+      as a role that will emerge soon, Engineers who get really involved in
+      really understanding the problem space and empathizing with the users.
+    </SectionText>
     <InnerSection>
       <AnimateSharedLayout>
         <CollapsibleList
