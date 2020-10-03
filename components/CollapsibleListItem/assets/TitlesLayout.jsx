@@ -7,7 +7,8 @@ const TitlesLayout = styled(motion.span)`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoint.mobile}) {
     align-items: flex-start;
     flex-direction: column;
   }

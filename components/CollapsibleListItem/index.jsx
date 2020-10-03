@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { AnimatePresence, motion } from "framer-motion";
+import moment from "moment";
 
 import Container from "./assets/Container";
 import Avatar from "./assets/Avatar";
@@ -14,11 +15,13 @@ import { theme } from "../../theme";
 import ExperienceSubtext from "./assets/ExperienceSubtext";
 
 const calcDiff = (start, end) => {
-  const months = Math.floor(
-    (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 31),
-  );
-  const years = Math.floor(months / 12);
-  return `${years > 0 ? `${years} yrs ` : ""}${months} mos`;
+  end.add(1, "months");
+  const years = end.diff(start, "year");
+  start.add(years, "years");
+  const months = end.diff(start, "months");
+  return `${years ? `${years} yr${years === 1 ? "" : "s"} ` : ""}${
+    months ? `${months} mo${months === 1 ? "" : "s"}` : ""
+  }`;
 };
 
 const ListItemText = ({ title, company, content, period, logo }) => {
@@ -42,8 +45,8 @@ const ListItemText = ({ title, company, content, period, logo }) => {
             </ExperienceText>
             <ExperienceSubtext layout>
               {calcDiff(
-                new Date(period.start),
-                period.end ? new Date(period.end) : new Date(),
+                moment(period.start),
+                period.end ? moment(period.end) : moment(),
               )}
             </ExperienceSubtext>
           </span>
