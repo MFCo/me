@@ -20,7 +20,7 @@ const CollapsibleListItem = ({ type, name, tech = [], isOpen }) => {
           <ProjectType layout>{type}</ProjectType>
         </span>
         <TechLayout layout mobileHide>
-          {tech.map((e) => (
+          {tech.map(e => (
             <Avatar key={`${e}out`} logo={`/logos/${e}`} light />
           ))}
         </TechLayout>

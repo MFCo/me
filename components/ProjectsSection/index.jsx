@@ -36,7 +36,7 @@ const projects = [
     tech: ["java.png", "javafx.png"],
   },
   {
-    id: 3,
+    id: 4,
     name: "Subset Sum Game",
     type: "Student Project",
     tech: ["c++.png", "cocos.jpeg"],
