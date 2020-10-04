@@ -32,7 +32,7 @@ This project was developed as a PoC to understand systems like styled-components
     Generates the abstract syntax tree from a given JS file using Esprima, then instruments that code adding callbacks to detect function's declaration and subsequent invocation.
     Print a graph that shows the relationship between functions, and also shows which functions and objects methods are never called to detect dead code.
     `,
-    tech: ["node.png", "esprima.png"],
+    tech: ["node.png", "esprima.png", "java.png"],
   },
   {
     id: 2,
