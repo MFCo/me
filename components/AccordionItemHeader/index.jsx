@@ -20,12 +20,17 @@ const AccordionItemHeader = ({ type, name, brief, tech = [], isOpen }) => (
         <i>{type}</i>
       </span>
       <TechLayout layout mobileHide>
-        {tech.map(e => (
+        {tech.map((e) => (
           <Avatar key={`${e}out`} logo={`/logos/${e}`} light />
         ))}
       </TechLayout>
       <RightIcon>{isOpen ? "-" : "+"}</RightIcon>
     </TitlesLayout>
+    <TechLayout layout desktopHide>
+      {tech.map((e) => (
+        <Avatar key={`${e}out`} logo={`/logos/${e}`} light />
+      ))}
+    </TechLayout>
   </HeaderLayout>
 );
 
