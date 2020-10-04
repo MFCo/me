@@ -9,8 +9,7 @@ const SectionTitle = styled.h2`
   margin: 0;
   @media only screen and (max-width: ${({ theme }) =>
       theme.breakpoint.mobile}) {
-    font-size: 3rem;
-
+    font-size: 2.4rem;
     margin: 0 ${({ theme }) => theme.unit * 2}px 0
       ${({ theme }) => theme.unit * 2}px;
   }

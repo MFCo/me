@@ -10,6 +10,11 @@ const Container = styled(motion.li)`
   &:last-child {
     margin-bottom: 0px;
   }
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoint.mobile}) {
+    margin: 0 ${({ theme }) => theme.unit * 2}px ${({ theme }) => theme.unit}px
+      ${({ theme }) => theme.unit * 2}px;
+  }
 `;
 
 export default Container;
