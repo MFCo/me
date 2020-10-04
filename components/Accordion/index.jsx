@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import { theme } from "../../theme";
 import Container from "./assets/Container";
@@ -25,6 +25,7 @@ const Accordion = ({ item, expanded, setExpanded }) => {
           tech={item.tech}
           type={item.type}
           name={item.name}
+          brief={item.brief}
           isOpen={isOpen}
         />
       </Header>

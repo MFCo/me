@@ -11,12 +11,13 @@ import RightIcon from "./assets/RightIcon";
 import ProjectName from "./assets/ProjectName";
 import ProjectType from "./assets/ProjectType";
 
-const CollapsibleListItem = ({ type, name, tech = [], isOpen }) => (
+const AccordionItemHeader = ({ type, name, brief, tech = [], isOpen }) => (
   <HeaderLayout layout>
     <TitlesLayout layout>
       <span>
         <ProjectName layout>{name}</ProjectName>
-        <ProjectType layout>{type}</ProjectType>
+        <ProjectType layout>{brief}</ProjectType>
+        <i>{type}</i>
       </span>
       <TechLayout layout mobileHide>
         {tech.map(e => (
@@ -28,11 +29,12 @@ const CollapsibleListItem = ({ type, name, tech = [], isOpen }) => (
   </HeaderLayout>
 );
 
-CollapsibleListItem.propTypes = {
+AccordionItemHeader.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,
+  brief: PropTypes.string,
   tech: PropTypes.array,
   isOpen: PropTypes.bool,
 };
 
-export default CollapsibleListItem;
+export default AccordionItemHeader;

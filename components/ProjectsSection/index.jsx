@@ -15,30 +15,37 @@ const projects = [
     id: 0,
     name: "Babel-plugin-CSS-generator-react-components",
     type: "Personal Project",
+    brief:
+      "CSS-in-JS solution, allows to define custom tags and attach styles to them",
     tech: ["js.png", "babel.jpg"],
   },
   {
     id: 1,
     name: "JSFObA",
     type: "Personal Project",
-    tech: ["node.png", "esprima.png", "javafx.png"],
+    brief: "JavaScript dead code analyzer",
+    tech: ["node.png", "esprima.png"],
   },
   {
     id: 2,
     name: "DPSolver",
     type: "Student Project",
+    brief: "Interactive tool to apply the Davis-Putnam algorithm",
     tech: ["java.png", "gwt.png"],
   },
   {
     id: 3,
     name: "Simple language compiler",
     type: "Student Project",
-    tech: ["java.png", "javafx.png"],
+    brief: "Simple imperative and procedural language compiler",
+    tech: ["java.png"],
   },
   {
     id: 4,
     name: "Subset Sum Game",
     type: "Student Project",
+    brief:
+      "Implementation of multiple algorithms to solve the knapsack problem",
     tech: ["c++.png", "cocos.jpeg"],
   },
 ];
@@ -65,7 +72,7 @@ const ProjectsSection = () => {
       <InnerSection>
         <AnimateSharedLayout>
           <AccordionContainer>
-            {projects.map(e => (
+            {projects.map((e) => (
               <Accordion
                 key={`${e.id}`}
                 item={e}
