@@ -49,9 +49,7 @@ const Accordion = ({ item, expanded, setExpanded }) => {
               transition={{ duration: 0.8 }}
               className="content-placeholder"
             >
-              sadfsdfdsdfsdjlfhjklsdhjfklsjdfklsdjf klskldjfklsdjfklsjdfkljsd
-              fkjsdklfjsdfkls dklfjskld jfklsdfjsd flksdjf sidfjuis diofkjs
-              diofjiosdjfi sdi jfoisd
+              {item.content}
             </Content>
           </Section>
         )}
