@@ -11,24 +11,22 @@ import RightIcon from "./assets/RightIcon";
 import ProjectName from "./assets/ProjectName";
 import ProjectType from "./assets/ProjectType";
 
-const CollapsibleListItem = ({ type, name, tech = [], isOpen }) => {
-  return (
-    <HeaderLayout layout>
-      <TitlesLayout layout>
-        <span>
-          <ProjectName layout>{name}</ProjectName>
-          <ProjectType layout>{type}</ProjectType>
-        </span>
-        <TechLayout layout mobileHide>
-          {tech.map(e => (
-            <Avatar key={`${e}out`} logo={`/logos/${e}`} light />
-          ))}
-        </TechLayout>
-        <RightIcon>{isOpen ? "-" : "+"}</RightIcon>
-      </TitlesLayout>
-    </HeaderLayout>
-  );
-};
+const CollapsibleListItem = ({ type, name, tech = [], isOpen }) => (
+  <HeaderLayout layout>
+    <TitlesLayout layout>
+      <span>
+        <ProjectName layout>{name}</ProjectName>
+        <ProjectType layout>{type}</ProjectType>
+      </span>
+      <TechLayout layout mobileHide>
+        {tech.map(e => (
+          <Avatar key={`${e}out`} logo={`/logos/${e}`} light />
+        ))}
+      </TechLayout>
+      <RightIcon>{isOpen ? "-" : "+"}</RightIcon>
+    </TitlesLayout>
+  </HeaderLayout>
+);
 
 CollapsibleListItem.propTypes = {
   type: PropTypes.string,

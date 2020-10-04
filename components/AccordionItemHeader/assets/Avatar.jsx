@@ -2,21 +2,20 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const Avatar = styled(motion.div)`
-  background-color: ${({ theme, light }) =>
-    light ? theme.colors.background : theme.colors.grey[500]};
+  background-color: transparent;
   min-width: ${({ theme }) => theme.unit * 5}px;
   min-height: ${({ theme }) => theme.unit * 5}px;
   max-width: ${({ theme }) => theme.unit * 5}px;
   max-height: ${({ theme }) => theme.unit * 5}px;
   border-radius: 50%;
-  ${({ logo, light, theme }) =>
+  ${({ logo, theme }) =>
     logo &&
     `
     background-image: url("${logo}");
     background-position: center; 
-    background-size: ${light ? `${theme.unit * 4}px` : "cover"};
+    background-size: ${theme.unit * 5}px;
     background-repeat: no-repeat;
-    ${light ? `margin-right: ${theme.unit}px;` : ""}
+    margin-right: ${theme.unit}px;
     `}
 `;
 
