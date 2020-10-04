@@ -67,7 +67,7 @@ This project was developed as a PoC to understand systems like styled-components
       "Implementation of multiple algorithms to solve the knapsack problem",
     content: `Developed in C++, using Cocos2D for the UI.
     Implementation of multiple heuristic algorithms to solve knapsack problem.
-    Goal is to make them compete to evaluate efficency of each of them when they play each other, common pool of objects and same knapsack size, who collects in the most efficient way win.`,
+    Goal is to make them compete to evaluate efficency of each of them when they play each other with a common pool of objects and same knapsack size, player who collects in the most efficient way win.`,
     tech: ["c++.png", "cocos.jpeg"],
   },
 ];
