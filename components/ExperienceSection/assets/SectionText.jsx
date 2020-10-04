@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const SectionText = styled.p`
   font-size: 1.6rem;
-  text-align: justify;
+  text-align: left;
   max-width: ${({ theme }) => theme.maxWidth / 2}px;
   color: ${({ theme }) => theme.colors.text.primary};
   margin: 0;
