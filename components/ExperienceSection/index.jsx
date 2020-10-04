@@ -4,7 +4,7 @@ import { AnimateSharedLayout } from "framer-motion";
 import CollapsibleList from "../CollapsibleList";
 
 import { theme } from "../../theme";
-import Section from "./assets/Section";
+import Section from "../SectionTemplate";
 import InnerSection from "./assets/InnerSection";
 import SectionTitle from "./assets/SectionTitle";
 import SectionText from "./assets/SectionText";
