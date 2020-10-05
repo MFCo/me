@@ -18,10 +18,8 @@ const SocialLogo = styled.a`
     `}
 
 @media only screen and (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-  min-width: ${({ theme }) => theme.unit * 3}px;
-  min-height: ${({ theme }) => theme.unit * 3}px;
-  max-width: ${({ theme }) => theme.unit * 3}px;
-  max-height: ${({ theme }) => theme.unit * 3}px;
+  margin-bottom: ${({ theme }) => theme.unit * 2}px;
+
   }
 `;
 
