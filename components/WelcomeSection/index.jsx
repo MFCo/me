@@ -13,8 +13,8 @@ import SocialLogo from "./assets/SocialLogo";
 
 const social = [
   { logo: "logos/github.png", link: "https://github.com/MFCo" },
-  { logo: "logos/medium.png", link: "https://medium.com/@marianococirio" },
-  { logo: "logos/linkedin.png", link: "https://www.linkedin.com/in/mcocirio/" },
+  { logo: "logos/medium.png", link: "https://mcocirio.medium.com" },
+  { logo: "logos/linkedin.png", link: "https://www.linkedin.com/in/mcocirio" },
   { logo: "logos/twitter.png", link: "https://twitter.com/MarianoCocirio" },
 ];
 
