@@ -13,6 +13,16 @@ import AccordionContainer from "./assets/AccordionContainer";
 const projects = [
   {
     id: 0,
+    name: "Miricyl Learning Tool",
+    type: "Volunteer Project",
+    brief:
+      "Guide with curated information for people with mental health issues",
+    content: `Allows users with mental health issues to navigate curated information related to their conditions. Prompts the user to find an answer on why are they feeling unwell to take further steps and create recipes to be reused in the future. This project was performed within the context of CodeYourFuture, served the Product Manager’s role, and mentored the students who developed the application.
+    `,
+    tech: [],
+  },
+  {
+    id: 1,
     name: "Babel-plugin-CSS-generator-react-components",
     type: "Personal Project",
     brief:
@@ -24,7 +34,7 @@ This project was developed as a PoC to understand systems like styled-components
     tech: ["js.png", "babel.jpg"],
   },
   {
-    id: 1,
+    id: 2,
     name: "JSFObA",
     type: "Personal Project",
     brief: "JavaScript dead code analyzer",
@@ -35,7 +45,7 @@ This project was developed as a PoC to understand systems like styled-components
     tech: ["node.png", "esprima.png", "java.png"],
   },
   {
-    id: 2,
+    id: 3,
     name: "DPSolver",
     type: "Student Project",
     brief: "Interactive tool to apply the Davis-Putnam algorithm",
@@ -48,8 +58,8 @@ This project was developed as a PoC to understand systems like styled-components
     tech: ["java.png", "gwt.png"],
   },
   {
-    id: 3,
-    name: "Simple language compiler",
+    id: 4,
+    name: "Simple Language Compiler",
     type: "Student Project",
     brief: "Simple imperative and procedural language compiler",
     content: `Developed in Java, using JavaFX for the UI.
@@ -60,7 +70,7 @@ This project was developed as a PoC to understand systems like styled-components
     tech: ["java.png"],
   },
   {
-    id: 4,
+    id: 5,
     name: "Subset Sum Game",
     type: "Student Project",
     brief:
