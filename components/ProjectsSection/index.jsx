@@ -91,8 +91,8 @@ const ProjectsSection = () => {
         <Underline color={theme.colors.red} />
       </span>
       <SectionText>
-        Across the years, I&apos;ve done a couple of personal projects, some of
-        them framed as student projects, as they were developed while in College,
+        Across the years, I&apos;ve done a couple of personal projects. Some of
+        them are framed as student projects, as they were developed while in college,
         to establish knowledge and take into practice some theoric concepts.
       </SectionText>
       <SectionText>

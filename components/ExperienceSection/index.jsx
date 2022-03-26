@@ -92,7 +92,7 @@ const ExperienceSection = () => (
             {
               company: "Medbelle",
               title: "Frontend Engineer",
-              period: { start: "Jun 2018", end: "Nov 2019" },
+              period: { start: "Jun 2018", end: "Oct 2019" },
               logo: "/logos/mb.png",
               tech: ["react.png", "graphql.png", "nextjs-logo.jpg"],
               content: `Developed the company web application (NextJS and GraphQL). Product advisor in UX/UI related
