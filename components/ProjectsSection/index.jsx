@@ -92,12 +92,12 @@ const ProjectsSection = () => {
       </span>
       <SectionText>
         Across the years, I&apos;ve done a couple of personal projects, some of
-        them framed as student projects as they were developed while in College
+        them framed as student projects, as they were developed while in College,
         to establish knowledge and take into practice some theoric concepts.
       </SectionText>
       <SectionText>
         Other projects have been developed as pet projects while trying to get a
-        better understanding over certain technologies, as you will appreciate I
+        better understanding over certain technologies, as you might appreciate I
         have a clear inclination to programming languages and how do they work
         under the hood.
       </SectionText>
