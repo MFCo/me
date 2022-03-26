@@ -18,10 +18,10 @@ const ExperienceSection = () => (
     </span>
     <SectionText>
       To start with, I think I should give you some background info about
-      myself. In 2018, I finished my master in Systems Engineering in Argentina.
+      myself. In 2018, I finished my MSc in Systems Engineering in Argentina.
       During my time at college I was focused on software performance and
-      programming languages, I was even applying to start a PhD and continue in
-      the academic world.
+      programming languages and how to improve developers experience, 
+      I was ready to start a PhD and continue in the academic world.
     </SectionText>
     <SectionText>
       After doing some mandatory internships to get my degree I found myself
@@ -35,12 +35,9 @@ const ExperienceSection = () => (
     </SectionText>
     <SectionText>
       Currently, my main goal is to build enjoyable and valuable Products.
-      Sometimes I find myself missing the technical part, that is why I keep
-      this website alive, using it as a playground to test new libraries and
-      frameworks. I truly believe in the
-      <i> Product Engineer </i>
-      as a role that will emerge soon, Engineers who get really involved in
-      really understanding the problem space and empathizing with the users.
+      Now, I'm lucky enough to be able to work again in my first passion, 
+      improving the developers experience. And also, helping to make the web 
+      faster, more accessible, and more inclusive.
     </SectionText>
     <InnerSection>
       <AnimateSharedLayout>
@@ -48,15 +45,33 @@ const ExperienceSection = () => (
           title="Product"
           items={[
             {
+              company: "Vercel",
+              title: "Senior Product Manager",
+              period: { start: "Apr 2022", end: null },
+              logo: "/logos/vercel.jpeg",
+              content: `Building an open-source developer tools platform that enables developers to build and iterate 
+              on the web without sinking time and money into DevOps.
+              `,
+            },
+            {
+              company: "GoTo (ex LogMeIn)",
+              title: "Product Manager",
+              period: { start: "Oct 2021", end: "Mar 2022" },
+              logo: "/logos/goto.png",
+              content: `Set the strategy, roadmap, and product definition for Backend Services and public APIs. Own 
+              backend unification to move from an inefficient backend architecture split across multiple products, 
+              to a unified approach while not neglecting the current customers’ problems.
+              `,
+            },
+            {
               company: "Medbelle",
               title: "Product Manager",
-              period: { start: "Nov 2019", end: null },
+              period: { start: "Nov 2019", end: "Sept 2021" },
               logo: "/logos/mb.png",
-              content: `Responsible for guiding the success of the B2B and Cosmetic Products leading the cross-functional team
-              that is responsible for improving them. Set the strategy, roadmap, and product definition. This involves
-              bridging gaps between different functions within the company and external stakeholders as Hospitals
-              and Surgeons. Moving the working model into a data-driven decision-making working model. Running
-              tests and analyzing data to prioritize major impact problems to tackle. Aligning all of the teams involved.`,
+              content: `Set the strategy, roadmap, and product definition for B2B and internal products. This involves 
+              bridging gaps between different functions within the company and external stakeholders as Hospitals and Surgeons. 
+              Moving the pre-existent working model into a data-driven decision-making working model. Running tests and 
+              analyzing data to prioritize major impact problems to tackle.`,
             },
             {
               company: "CodeYourFuture",
