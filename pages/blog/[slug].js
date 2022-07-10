@@ -26,7 +26,7 @@ const ptComponents = {
     }
 }
 
-const Post = ({ post }) => {
+const Post = ({ post = {} }) => {
     const {
         title = 'Missing title',
         name = 'Missing name',
@@ -35,7 +35,8 @@ const Post = ({ post }) => {
         body = []
     } = post
     return (
-        <div> <LocaleSwitcher />
+        <div>
+            <a href="/"> Back to index </a>
             <article>
                 <h1>{title}</h1>
                 <span>By {name}</span>
@@ -71,20 +72,20 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "authorImage": author->image,
   body
 }`
-export async function getStaticPaths() {
-    const paths = await client.fetch(
-        groq`*[_type == "post" && defined(slug.current)][].slug.current`
-    )
 
+export async function getStaticPaths({ locales }) {
+    const paths = await client.fetch(
+        groq`*[_type == "post" && defined(slug.current)][]`
+    )
     return {
-        paths: paths.map((slug) => ({ params: { slug } })),
+        paths: paths.map(path => ({ params: { slug: path.slug.current }, locale: path.__i18n_lang })),
         fallback: true,
     }
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps({ params }) {
     // It's important to default the slug so that it doesn't return "undefined"
-    const { slug = "" } = context.params
+    const { slug = "" } = params
     const post = await client.fetch(query, { slug })
     return {
         props: {

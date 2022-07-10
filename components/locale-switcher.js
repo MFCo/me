@@ -8,7 +8,7 @@ export default function LocaleSwitcher() {
 
   return (
     <div>
-      <p>Locale switcher:</p>
+      <p>Switch blog langauge to:</p>
       <ul>
         {otherLocales.map((locale) => {
           const { pathname, query, asPath } = router

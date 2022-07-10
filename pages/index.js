@@ -33,9 +33,10 @@ export default function IndexPage({ posts }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
+  console.log(locale);
   const posts = await client.fetch(groq`
-    *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
+    *[_type == "post" && publishedAt < now() && __i18n_lang == '${locale}'] | order(publishedAt desc)
   `)
   return {
     props: {

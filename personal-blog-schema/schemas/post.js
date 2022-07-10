@@ -2,18 +2,12 @@ export default {
   name: 'post',
   title: 'Post',
   type: 'document',
+  i18n: true,
   fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
-    },
-    {
-      name: 'language',
-      title: 'Language',
-      type: 'string',
-      list: ['en', 'es'],
-      layout: 'radio',
     },
     {
       name: 'slug',

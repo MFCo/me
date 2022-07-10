@@ -1,0 +1,21 @@
+{
+    "base": "en",
+    "languages": [
+      {
+        "title": "English",
+        "id": "en"
+      },
+      {
+        "title": "Spanish",
+        "id": "es"
+      }
+    ],
+    "idStructure": "delimiter",
+    "referenceBehavior": "strong",
+    "withTranslationsMaintenance": false,
+    "fieldNames": {
+      "lang": "__i18n_lang",
+      "references": "__i18n_refs",
+      "baseReference": "__i18n_base"
+    }
+  }
