@@ -8,7 +8,7 @@ export default function LocaleSwitcher() {
 
   return (
     <div>
-      <p>Switch blog langauge to:</p>
+      <p>{ activeLocale === 'en' ? 'Switch blog langauge to: ' : 'Cambiar idioma del blog a: '}</p>
       <ul>
         {otherLocales.map((locale) => {
           const { pathname, query, asPath } = router
