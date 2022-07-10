@@ -15,21 +15,6 @@ export default function IndexPage({ posts }) {
       <p>Default locale: {defaultLocale}</p>
       <p>Configured locales: {JSON.stringify(locales)}</p>
       <LocaleSwitcher />
-
-      <Link href="/gsp">
-        <a>To getStaticProps page</a>
-      </Link>
-      <br />
-
-      <Link href="/gsp/first">
-        <a>To dynamic getStaticProps page</a>
-      </Link>
-      <br />
-
-      <Link href="/gssp">
-        <a>To getServerSideProps page</a>
-      </Link>
-      <br />
       <div>
         <h1>Welcome to a blog!</h1>
         {posts.length > 0 && posts.map(
