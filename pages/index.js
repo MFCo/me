@@ -49,7 +49,7 @@ export default function IndexPage({ posts }) {
         personal experiences.
       </p>
       <p className="mb-2">
-        Currently I'm a product manager at{" "}
+        Currently, I'm a product manager at{" "}
         <a className="font-bold" target="_blank" href="https://vercel.com">
           Vercel
         </a>

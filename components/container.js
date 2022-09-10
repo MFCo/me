@@ -57,7 +57,7 @@ export default function Container(props) {
         <meta name="twitter:image" content={meta.image} />
       </Head>
       <div className="flex flex-col justify-center">
-        <nav className="flex items-center justify-between w-full relative max-w-2xl border-green-200 mx-auto pt-4 pb-4 sm:pt-8 sm:pb-16 text-gray-600">
+        <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 mx-auto pt-4 pb-4 sm:pt-8 sm:pb-16 text-gray-600">
           <div className="ml-[-0.60rem]">
             <NavItem href="/" text="Home" />
             <NavItem href="/blog" text="Blog" />
