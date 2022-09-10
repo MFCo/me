@@ -51,7 +51,7 @@ export default function IndexPage({ posts }) {
           Vercel{" "}
         </a>
       </p>
-      <div className="sm:bg-white sm:bg-opacity-100 sm:border-2 sm:p-4 mb-4 rounded-lg dark:bg-gray-700">
+      <div className="sm:bg-white sm:bg-opacity-100 sm:border-2 sm:p-4 mb-4 rounded-lg dark:sm:bg-gray-700">
         <p className="mb-2 dark:text-gray-300">
           Hey! My name is Mariano. I'm from{" "}
           <a
