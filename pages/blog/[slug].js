@@ -18,8 +18,11 @@ const ptComponents = {
     em: ({ children }) => <em className="font-mono bg-gray-200 px-1 rounded-sm text-base not-italic">{children}</em>,
   },
   block: {
+    h2: ({ children }) => (
+        <h2 className="text-3xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800">{children}</h2>
+      ),
     h3: ({ children }) => (
-      <h1 className="text-2xl font-bold pb-4 pt-8 text-gray-800">{children}</h1>
+      <h3 className="text-2xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800">{children}</h3>
     ),
     normal: ({ children }) => <p className="font-sans text-lg">{children}</p>,
   },
@@ -69,7 +72,7 @@ const Post = ({ post = {} }) => {
   return (
     <div className="max-w-xs sm:max-w-2xl pb-8">
       <article>
-        <h1 className="text-3xl sm:text-4xl font-bold pb-2 text-gray-800">{title}</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold pb-4 text-gray-800">{title}</h1>
         <PortableText value={body} components={ptComponents} />
       </article>
     </div>

@@ -3,34 +3,13 @@ import { useRouter } from "next/router";
 import NextLink from "next/link";
 import cn from "classnames";
 
-function NavItem({ href, text }) {
-  const router = useRouter();
-  const isActive = router.asPath === href;
-
-  return (
-    <NextLink href={href}>
-      <a
-        className={cn(
-          isActive
-            ? "font-semibold text-gray-600 border-1 border-gray-600"
-            : "font-normal text-gray-500",
-          "inline-block p-1 px-3 py-2 rounded-lg hover:bg-blue-200 transition-all"
-        )}
-      >
-        <span className="capsize">{text}</span>
-      </a>
-    </NextLink>
-  );
-}
-
 export default function Container(props) {
   const { children } = props;
   const router = useRouter();
   const meta = {
     title: "Mariano Cocirio – Product manager.",
     description: `Product manager, front-end developer, and JavaScript enthusiast.`,
-    image:
-      "https://mcocirio.com/avatar.png",
+    image: "https://mcocirio.com/avatar.png",
     type: "website",
   };
 
@@ -59,8 +38,30 @@ export default function Container(props) {
       <div className="flex flex-col justify-center">
         <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 mx-auto pt-4 pb-4 sm:pt-8 sm:pb-16 text-gray-600">
           <div className="ml-[-0.60rem]">
-            <NavItem href="/" text="Home" />
-            <NavItem href="/blog" text="Blog" />
+            <NextLink href="/">
+              <a
+                className={cn(
+                  router.asPath === "/"
+                    ? "font-semibold text-gray-600 border-1 border-gray-600"
+                    : "font-normal text-gray-500",
+                  "inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 transition-all"
+                )}
+              >
+                <span>Home</span>
+              </a>
+            </NextLink>
+            <NextLink href="/blog">
+              <a
+                className={cn(
+                  router.asPath.includes("/blog")
+                    ? "font-semibold text-gray-600 border-1 border-gray-600"
+                    : "font-normal text-gray-500",
+                  "inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 transition-all"
+                )}
+              >
+                <span>Blog</span>
+              </a>
+            </NextLink>
           </div>
         </nav>
       </div>
