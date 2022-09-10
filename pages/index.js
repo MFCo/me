@@ -3,10 +3,22 @@ import groq from "groq";
 import client from "../client";
 
 const social = [
-  { logo: "logos/email.png", link: "mailto:marianococirio@gmail.com", alt: "Email" },
+  {
+    logo: "logos/email.png",
+    link: "mailto:marianococirio@gmail.com",
+    alt: "Email",
+  },
   { logo: "logos/github.png", link: "https://github.com/MFCo", alt: "GitHub" },
-  { logo: "logos/twitter.png", link: "https://twitter.com/MarianoCocirio", alt: "Twitter" },
-  { logo: "logos/linkedin.png", link: "https://www.linkedin.com/in/mcocirio", alt: "LinkedIn" },
+  {
+    logo: "logos/twitter.png",
+    link: "https://twitter.com/MarianoCocirio",
+    alt: "Twitter",
+  },
+  {
+    logo: "logos/linkedin.png",
+    link: "https://www.linkedin.com/in/mcocirio",
+    alt: "LinkedIn",
+  },
 ];
 
 export default function IndexPage({ posts }) {
@@ -46,14 +58,12 @@ export default function IndexPage({ posts }) {
           and making development easier for everyone.
         </p>
         <p className="mb-2">
-          Also, I've always liked to write, so {" "}
-          <a
-            className="font-bold"
-            href="/blog"
-            aria-label="Go to my blog"
-          >here </a> {" "} you'll find most of my
-          articles. I write mainly about Product Management, Software
-          Engineering, and also personal experiences.
+          Also, I've always liked to write,{" "}
+          <a className="font-bold" href="/blog" aria-label="Go to my blog">
+            you'll find most of my articles at my blog{" "}
+          </a>
+          . I write mainly about Product Management, Software Engineering, and
+          also personal experiences.
         </p>
         <p className="mb-2">
           Currently, I'm a product manager at{" "}
@@ -91,7 +101,13 @@ export default function IndexPage({ posts }) {
       </h2>
       <div className="flex mb-10">
         {social.map((e) => (
-          <a key={e.logo} href={e.link} aria-label={`contact me via ${e.alt}`} target="_blank" rel="noopener">
+          <a
+            key={e.logo}
+            href={e.link}
+            aria-label={`contact me via ${e.alt}`}
+            target="_blank"
+            rel="noopener"
+          >
             <img alt={e.alt} src={e.logo} className="w-8 h-8 mr-4" />
           </a>
         ))}
