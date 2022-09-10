@@ -9,9 +9,25 @@ function urlFor(source) {
 }
 
 const ptComponents = {
+  marks: {
+    link: ({ value, children }) => (
+      <a className="underline text-gray-800 font-bold" href={value?.href} target="_blank" rel="noindex nofollow">
+        {children}
+      </a>
+    ),
+  },
   block: {
     h3: ({ children }) => (
-      <h1 className="text-3xl font-bold pb-4 text-gray-800">{children}</h1>
+      <h1 className="text-3xl font-bold pb-4 pt-8 text-gray-800">{children}</h1>
+    ),
+    normal: ({ children }) => <p className="font-sans text-lg">{children}</p>,
+  },
+  list: {
+    bullet: ({ children }) => (
+      <ul className="list-disc pb-2 ml-4 text-lg">{children}</ul>
+    ),
+    number: ({ children }) => (
+      <ol className="list-decimal text-lg py-2 ml-8">{children}</ol>
     ),
   },
   types: {
@@ -19,11 +35,18 @@ const ptComponents = {
       if (!value?.asset?._ref) {
         return null;
       }
-      return <img alt={value.alt || " "} loading="lazy" src={urlFor(value)} />;
+      return (
+        <img
+          className="py-4 mx-auto"
+          alt={value.alt || " "}
+          loading="lazy"
+          src={urlFor(value)}
+        />
+      );
     },
     code: ({ value }) => {
       return (
-        <div className="font-mono py-4">
+        <div className="font-mono py-4 text-sm rounded-full">
           <CodeBlock
             text={value.code}
             language={value.language}
@@ -39,22 +62,19 @@ const ptComponents = {
 const Post = ({ post = {} }) => {
   const {
     title = "Missing title",
-    name = "Missing name",
     categories,
     body = [],
   } = post;
   return (
-    <div className="max-w-2xl">
+    <div className="max-w-xs sm:max-w-2xl pb-8">
       <article>
-        <h1 className="text-5xl font-bold pb-4 text-gray-800">{title}</h1>
-        <span className="text-xl pb-8 text-gray-800">By {name}</span>
+        <h1 className="text-4xl sm:text-5xl font-bold pb-4 text-gray-800">{title}</h1>
         {categories && (
-          <p>
-            Posted in:
+          <div className="flex flex-wrap pt-2">
             {categories.map((category) => (
-              <span key={category}>{category}</span>
+              <span className="text-sm font-bold border-pink-300 py-1 my-1 bg-pink-100 px-2 mr-2 rounded-full border-2 text-pink-800" key={category}>{category}</span>
             ))}
-          </p>
+          </div>
         )}
         <PortableText value={body} components={ptComponents} />
       </article>
@@ -64,7 +84,6 @@ const Post = ({ post = {} }) => {
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
-  "name": author->name,
   "categories": categories[]->title,
   body
 }`;

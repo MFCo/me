@@ -35,7 +35,7 @@ export default function Container(props) {
   };
 
   return (
-    <div className="bg-blue-50 min-h-screen bg-opacity-60 px-8">
+    <div className="bg-green-50 min-h-screen bg-opacity-60 px-8">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -57,7 +57,7 @@ export default function Container(props) {
         <meta name="twitter:image" content={meta.image} />
       </Head>
       <div className="flex flex-col justify-center">
-        <nav className="flex items-center justify-between w-full relative max-w-2xl border-blue-200 mx-auto pt-8 pb-8 sm:pb-16 text-gray-600">
+        <nav className="flex items-center justify-between w-full relative max-w-2xl border-green-200 mx-auto pt-4 pb-4 sm:pt-8 sm:pb-16 text-gray-600">
           <div className="ml-[-0.60rem]">
             <NavItem href="/" text="Home" />
             <NavItem href="/blog" text="Blog" />

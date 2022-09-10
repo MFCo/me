@@ -16,9 +16,11 @@ export default function IndexPage({ posts }) {
             slug && (
               <li key={_id}>
                 <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
-                  <a>{title}</a>
+                  <a className="italic underline">{title}</a>
                 </Link>{" "}
-                ({new Date(publishedAt).toLocaleDateString("en-GB")})
+                <span className="text-sm">
+                  ({new Date(publishedAt).toLocaleDateString("en-GB")})
+                </span>
               </li>
             )
         )}
