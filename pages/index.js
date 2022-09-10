@@ -60,7 +60,7 @@ export default function IndexPage({ posts }) {
         <p className="mb-2">
           Also, I've always liked to write,{" "}
           <a className="font-bold" href="/blog" aria-label="Go to my blog">
-            you'll find most of my articles at my blog{" "}
+            you'll find most of my articles at my blog
           </a>
           . I write mainly about Product Management, Software Engineering, and
           also personal experiences.
