@@ -2,7 +2,6 @@
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
-import LocaleSwitcher from '../../components/locale-switcher';
 import client from '../../client'
 
 function urlFor(source) {
@@ -78,9 +77,9 @@ export async function getStaticPaths({ locales }) {
         groq`*[_type == "post" && defined(slug.current)][]`
     )
     return {
-        paths: paths.map(path => ({ params: { slug: path.slug.current }, locale: path.__i18n_lang })),
-        fallback: true,
-    }
+        paths: paths.map((slug) => ({ params: { slug } })),
+        fallback: 'blocking'
+      };
 }
 
 export async function getStaticProps({ params }) {
