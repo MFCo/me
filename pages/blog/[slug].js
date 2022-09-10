@@ -72,7 +72,7 @@ const Post = ({ post = {} }) => {
   return (
     <div className="max-w-xs sm:max-w-2xl pb-8">
       <article>
-        <h1 className="text-3xl sm:text-4xl font-bold pb-4 text-gray-800">{title}</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-gray-800">{title}</h1>
         <PortableText value={body} components={ptComponents} />
       </article>
     </div>

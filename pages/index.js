@@ -88,7 +88,7 @@ export default function IndexPage({ posts }) {
       <h2 className="text-xl md:text-2xl font-bold text-gray-800 pb-2 pt-4">
         Contact me
       </h2>
-      <div className="flex">
+      <div className="flex mb-10">
         {social.map((e) => (
           <a key={e.logo} href={e.link} target="_blank" rel="noopener">
             <img src={e.logo} className="w-8 h-8 mr-4" />
