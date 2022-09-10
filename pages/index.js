@@ -1,16 +1,11 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import groq from 'groq'
 import client from '../client'
 
 export default function IndexPage({ posts }) {
-  const router = useRouter()
-  const { locale } = router
-
   return (
     <div>
       <h1>{'Inicio'}</h1>
-      <p>{'Idioma actual: '} {locale}</p>
       <div>
         <h1>{'Bienvenidos al blog!'}</h1>
         {posts.length > 0 && posts.map(
@@ -20,7 +15,7 @@ export default function IndexPage({ posts }) {
                 <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
                   <a>{title}</a>
                 </Link>{' '}
-                ({new Date(publishedAt).toLocaleDateString(locale)})
+                ({new Date(publishedAt).toLocaleDateString('de-DE')})
               </li>
             )
         )}
@@ -29,7 +24,7 @@ export default function IndexPage({ posts }) {
   )
 }
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps() {
   const posts = await client.fetch(groq`
     *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
   `)
