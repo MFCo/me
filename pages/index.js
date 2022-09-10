@@ -81,7 +81,7 @@ export default function IndexPage({ posts }) {
           posts.slice(0, 5).map(
             ({ _id, title = "", slug = "", publishedAt = "" }) =>
               slug && (
-                <li className="p-1 mb-2" key={_id}>
+                <li className="pb-1" key={_id}>
                   <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
                     <a className="italic underline mb-1">{title}</a>
                   </Link>{" "}
