@@ -1,0 +1,38 @@
+import Link from "next/link";
+import groq from "groq";
+import client from "../../client";
+
+export default function IndexPage({ posts }) {
+  return (
+    <div>
+      <h1 className="text-5xl font-bold pb-8 text-gray-800">Blog</h1>
+      <p className="pb-4">
+        Here you'll find most of my articles. I write mainly about Product
+        Management, Software Engineering, and also personal experiences..
+      </p>
+      {posts.length > 0 &&
+        posts.map(
+          ({ _id, title = "", slug = "", publishedAt = "" }) =>
+            slug && (
+              <li key={_id}>
+                <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
+                  <a>{title}</a>
+                </Link>{" "}
+                ({new Date(publishedAt).toLocaleDateString("en-GB")})
+              </li>
+            )
+        )}
+    </div>
+  );
+}
+
+export async function getStaticProps() {
+  const posts = await client.fetch(groq`
+    *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
+  `);
+  return {
+    props: {
+      posts,
+    },
+  };
+}
