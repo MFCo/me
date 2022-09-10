@@ -7,7 +7,7 @@ export default function IndexPage({ posts }) {
     <div>
       <h1>{'Inicio'}</h1>
       <div>
-        <h1>{'Bienvenidos al blog!'}</h1>
+        <h1 className="text-3xl font-bold underline">{'Bienvenidos al blog!'}</h1>
         {posts.length > 0 && posts.map(
           ({ _id, title = '', slug = '', publishedAt = '' }) =>
             slug && (
