@@ -71,7 +71,7 @@ export default function Container(props) {
           {children}
         </div>
       </main>
-      <footer className="w-full max-w-2xl border-t-2 mx-auto p-4 pb-8 text-gray-400">
+      <footer className="w-full max-w-2xl border-t-2 mx-auto pt-4 pb-8 text-gray-400">
         Mariano Fernandez Cocirio © 2022
       </footer>
     </div>
