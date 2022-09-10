@@ -15,10 +15,11 @@ const ptComponents = {
         {children}
       </a>
     ),
+    em: ({ children }) => <em className="font-mono bg-gray-200 px-1 rounded-sm text-base not-italic">{children}</em>,
   },
   block: {
     h3: ({ children }) => (
-      <h1 className="text-3xl font-bold pb-4 pt-8 text-gray-800">{children}</h1>
+      <h1 className="text-2xl font-bold pb-4 pt-8 text-gray-800">{children}</h1>
     ),
     normal: ({ children }) => <p className="font-sans text-lg">{children}</p>,
   },
@@ -68,7 +69,7 @@ const Post = ({ post = {} }) => {
   return (
     <div className="max-w-xs sm:max-w-2xl pb-8">
       <article>
-        <h1 className="text-4xl sm:text-5xl font-bold pb-4 text-gray-800">{title}</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold pb-4 text-gray-800">{title}</h1>
         {categories && (
           <div className="flex flex-wrap pt-2">
             {categories.map((category) => (
