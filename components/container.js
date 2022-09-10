@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Html } from "next/document";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
 import cn from "classnames";
@@ -14,7 +15,7 @@ export default function Container(props) {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen bg-opacity-60 px-8">
+    <>
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -70,6 +71,6 @@ export default function Container(props) {
           {children}
         </div>
       </main>
-    </div>
+    </>
   );
 }

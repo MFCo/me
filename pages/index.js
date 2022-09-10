@@ -3,10 +3,10 @@ import groq from "groq";
 import client from "../client";
 
 const social = [
-  { logo: "logos/email.png", link: "mailto:marianococirio@gmail.com" },
-  { logo: "logos/github.png", link: "https://github.com/MFCo" },
-  { logo: "logos/twitter.png", link: "https://twitter.com/MarianoCocirio" },
-  { logo: "logos/linkedin.png", link: "https://www.linkedin.com/in/mcocirio" },
+  { logo: "logos/email.png", link: "mailto:marianococirio@gmail.com", alt: "Email" },
+  { logo: "logos/github.png", link: "https://github.com/MFCo", alt: "GitHub" },
+  { logo: "logos/twitter.png", link: "https://twitter.com/MarianoCocirio", alt: "Twitter" },
+  { logo: "logos/linkedin.png", link: "https://www.linkedin.com/in/mcocirio", alt: "LinkedIn" },
 ];
 
 export default function IndexPage({ posts }) {
@@ -90,8 +90,8 @@ export default function IndexPage({ posts }) {
       </h2>
       <div className="flex mb-10">
         {social.map((e) => (
-          <a key={e.logo} href={e.link} target="_blank" rel="noopener">
-            <img src={e.logo} className="w-8 h-8 mr-4" />
+          <a key={e.logo} href={e.link} aria-label={`contact me via ${e.alt}`} target="_blank" rel="noopener">
+            <img alt={e.alt} src={e.logo} className="w-8 h-8 mr-4" />
           </a>
         ))}
       </div>
