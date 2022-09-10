@@ -15,7 +15,7 @@ export default function Container(props) {
   };
 
   return (
-    <>
+    <div className="flex flex-col h-screen justify-between">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -66,11 +66,14 @@ export default function Container(props) {
           </div>
         </nav>
       </div>
-      <main className="flex flex-col">
+      <main className="flex flex-col mb-auto">
         <div className="flex items-center justify-between w-full relative max-w-2xl mx-auto text-gray-600">
           {children}
         </div>
       </main>
-    </>
+      <footer className="w-full max-w-2xl border-t-2 mx-auto p-4 pb-8 text-gray-400">
+        Mariano Fernandez Cocirio © 2022
+      </footer>
+    </div>
   );
 }
