@@ -72,24 +72,27 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   body
 }`
 
-export async function getStaticPaths({ locales }) {
+export async function getStaticPaths() {
     const paths = await client.fetch(
-        groq`*[_type == "post" && defined(slug.current)][]`
+      `*[_type == "post" && defined(slug.current)][].slug.current`
     )
+  
     return {
-        paths: paths.map((slug) => ({ params: { slug } })),
-        fallback: 'blocking'
-      };
-}
-
-export async function getStaticProps({ params }) {
-    // It's important to default the slug so that it doesn't return "undefined"
-    const { slug = "" } = params
-    const post = await client.fetch(query, { slug })
-    return {
-        props: {
-            post
-        }
+      paths: paths.map((slug) => ({params: {slug}})),
+      fallback: true,
     }
-}
+  }
+  
+  export async function getStaticProps(context) {
+    const { slug = "" } = context.params
+    const post = await client.fetch(`
+      *[_type == "post" && slug.current == $slug][0]
+    `, { slug })
+    return {
+      props: {
+        post
+      }
+    }
+  }
+  
 export default Post
