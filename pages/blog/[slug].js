@@ -69,14 +69,7 @@ const Post = ({ post = {} }) => {
   return (
     <div className="max-w-xs sm:max-w-2xl pb-8">
       <article>
-        <h1 className="text-3xl sm:text-4xl font-bold pb-4 text-gray-800">{title}</h1>
-        {categories && (
-          <div className="flex flex-wrap pt-2">
-            {categories.map((category) => (
-              <span className="text-sm font-bold border-pink-300 py-1 my-1 bg-pink-100 px-2 mr-2 rounded-full border-2 text-pink-800" key={category}>{category}</span>
-            ))}
-          </div>
-        )}
+        <h1 className="text-3xl sm:text-4xl font-bold pb-2 text-gray-800">{title}</h1>
         <PortableText value={body} components={ptComponents} />
       </article>
     </div>
@@ -85,7 +78,6 @@ const Post = ({ post = {} }) => {
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
-  "categories": categories[]->title,
   body
 }`;
 
