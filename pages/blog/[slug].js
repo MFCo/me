@@ -15,23 +15,23 @@ const ptComponents = {
         {children}
       </a>
     ),
-    em: ({ children }) => <em className="font-mono bg-gray-200 px-1 rounded-sm text-base not-italic">{children}</em>,
+    em: ({ children }) => <em className="font-mono bg-gray-200 px-1 rounded-sm text-base not-italic dark:text-gray-800 dark:bg-gray-300">{children}</em>,
   },
   block: {
     h2: ({ children }) => (
-        <h2 className="text-3xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800">{children}</h2>
+        <h2 className="text-3xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800 dark:text-gray-200">{children}</h2>
       ),
     h3: ({ children }) => (
-      <h3 className="text-2xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800">{children}</h3>
+      <h3 className="text-2xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800 dark:text-gray-200">{children}</h3>
     ),
-    normal: ({ children }) => <p className="font-sans text-lg">{children}</p>,
+    normal: ({ children }) => <p className="font-sans text-lg dark:text-gray-300">{children}</p>,
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc pb-2 ml-4 text-lg">{children}</ul>
+      <ul className="list-disc font-sans pb-2 ml-4 text-lg dark:text-gray-200">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal text-lg py-2 ml-8">{children}</ol>
+      <ol className="list-decimal font-sans text-lg py-2 ml-8 dark:text-gray-200">{children}</ol>
     ),
   },
   types: {
@@ -72,7 +72,7 @@ const Post = ({ post = {} }) => {
   return (
     <div className="max-w-xs sm:max-w-2xl pb-8">
       <article>
-        <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-gray-800">{title}</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-gray-800 dark:text-gray-200">{title}</h1>
         <PortableText value={body} components={ptComponents} />
       </article>
     </div>

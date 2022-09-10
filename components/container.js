@@ -3,6 +3,7 @@ import { Html } from "next/document";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
 import cn from "classnames";
+import ThemeChanger from "./theme-changer";
 
 export default function Container(props) {
   const { children } = props;
@@ -38,14 +39,14 @@ export default function Container(props) {
       </Head>
       <div className="flex flex-col justify-center">
         <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 mx-auto pt-4 pb-4 sm:pt-8 sm:pb-16 text-gray-600">
-          <div className="ml-[-0.60rem]">
+          <div>
             <NextLink href="/">
               <a
                 className={cn(
                   router.asPath === "/"
-                    ? "font-semibold text-gray-600 border-1 border-gray-600"
-                    : "font-normal text-gray-500",
-                  "inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 transition-all"
+                    ? "font-semibold text-gray-600 dark:text-gray-200 border-1 border-gray-600"
+                    : "font-normal text-gray-500 dark:text-gray-400",
+                  "inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-500 dark:hover:text-gray-200 transition-all"
                 )}
               >
                 <span>Home</span>
@@ -55,15 +56,16 @@ export default function Container(props) {
               <a
                 className={cn(
                   router.asPath.includes("/blog")
-                    ? "font-semibold text-gray-600 border-1 border-gray-600"
-                    : "font-normal text-gray-500",
-                  "inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 transition-all"
+                    ? "font-semibold text-gray-600 dark:text-gray-200 border-1 border-gray-600"
+                    : "font-normal text-gray-500 dark:text-gray-400",
+                  "inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-500 dark:hover:text-gray-200 transition-all"
                 )}
               >
                 <span>Blog</span>
               </a>
             </NextLink>
           </div>
+          <ThemeChanger />
         </nav>
       </div>
       <main className="flex flex-col mb-auto">
