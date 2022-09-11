@@ -11,7 +11,7 @@ export default function Container(props) {
   const meta = {
     title: "Mariano Cocirio",
     description: `Product manager, front-end developer, and web enthusiast`,
-    image: "https://mcocirio.com/avatar.png",
+    image: "https://i.postimg.cc/t4TH7WDw/avatar.png",
     type: "website",
   };
 
