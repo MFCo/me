@@ -86,7 +86,7 @@ const ptComponents = {
 const Post = ({ post = {} }) => {
   const { title = "Missing title", body = [], mainImage } = post;
   return (
-    <Container title={`${title} - Mariano Cocirio`} image={urlFor(mainImage).url()}>
+    <Container title={`${title} - Mariano Cocirio`} image={mainImage && urlFor(mainImage).url()}>
       <div className="max-w-xs sm:max-w-2xl pb-8">
         <article>
           <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-gray-800 dark:text-gray-200">
