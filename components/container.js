@@ -6,12 +6,12 @@ import cn from "classnames";
 import ThemeChanger from "./theme-changer";
 
 export default function Container(props) {
-  const { children } = props;
+  const { children, title, image } = props;
   const router = useRouter();
   const meta = {
-    title: "Mariano Cocirio",
+    title: title || "Mariano Cocirio",
     description: `Product manager, front-end developer, and web enthusiast`,
-    image: "https://i.postimg.cc/t4TH7WDw/avatar.png",
+    image: image || "https://i.postimg.cc/t4TH7WDw/avatar.png",
     type: "website",
   };
 
@@ -70,7 +70,7 @@ export default function Container(props) {
       </div>
       <main className="flex flex-col mb-auto">
         <div className="flex items-center justify-between w-full relative max-w-2xl mx-auto text-gray-600">
-          {children}
+          <div>{children}</div>
         </div>
       </main>
       <footer className="w-full max-w-2xl border-t-2 mx-auto pt-4 pb-8 text-gray-600 dark:text-gray-300">

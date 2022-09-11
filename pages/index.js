@@ -3,6 +3,7 @@ import groq from "groq";
 import client from "../client";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import Container from "../components/container";
 
 const social = [
   {
@@ -41,7 +42,7 @@ export default function IndexPage({ posts }) {
   useEffect(() => setMounted(true), []);
 
   return (
-    <div>
+    <Container>
       <h1 className="text-3xl md:text-5xl font-bold text-gray-800 pb-2 dark:text-gray-200">
         Mariano Cocirio
       </h1>
@@ -143,7 +144,7 @@ export default function IndexPage({ posts }) {
           </a>
         ))}
       </div>
-    </div>
+    </Container>
   );
 }
 
