@@ -9,8 +9,8 @@ export default function Container(props) {
   const { children } = props;
   const router = useRouter();
   const meta = {
-    title: "Mariano Cocirio – Product manager.",
-    description: `Product manager, front-end developer, and JavaScript enthusiast.`,
+    title: "Mariano Cocirio",
+    description: `Product manager, front-end developer, and web enthusiast`,
     image: "https://mcocirio.com/avatar.png",
     type: "website",
   };
