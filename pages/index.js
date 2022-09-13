@@ -58,9 +58,9 @@ export default function IndexPage({ posts }) {
           <a
             className="font-bold"
             target="_blank"
-            href="https://www.google.com/maps/place/Tandil,+Buenos+Aires+Province,+Argentina/"
+            href="https://www.google.com/maps/place/Rauch,+Buenos+Aires+Province,+Argentina/"
           >
-            Tandil
+            Rauch
           </a>
           , but I'm living in{" "}
           <a
@@ -73,7 +73,7 @@ export default function IndexPage({ posts }) {
           .
         </p>
         <p className="mb-2 dark:text-gray-300">
-          I'm a software engineer who has always been attracted by performance
+          I'm a product manager/software engineer who has always been attracted by performance
           and making development easier for everyone.
         </p>
         <p className="mb-2 dark:text-gray-300">
