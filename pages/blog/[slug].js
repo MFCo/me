@@ -1,5 +1,6 @@
 import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
+import ErrorPage from 'next/error'
 import { PortableText } from "@portabletext/react";
 import client from "../../client";
 import { CodeBlock, vs2015 } from "react-code-blocks";
@@ -16,7 +17,7 @@ const ptComponents = {
         className="underline text-gray-800 font-bold"
         href={value?.href}
         target="_blank"
-        rel="noindex nofollow"
+        rel="noindex nof ollow"
       >
         {children}
       </a>
@@ -83,10 +84,16 @@ const ptComponents = {
   },
 };
 
-const Post = ({ post = {} }) => {
+const Post = ({ post = { title: "Whoops, no article found :(", body: [] } }) => {
+  if (!post) {
+    return <ErrorPage statusCode={404} />
+  }
   const { title = "Missing title", body = [], mainImage } = post;
   return (
-    <Container title={`${title} - Mariano Cocirio`} image={mainImage && urlFor(mainImage).url()}>
+    <Container
+      title={`${title} - Mariano Cocirio`}
+      image={mainImage && urlFor(mainImage).url()}
+    >
       <div className="max-w-xs sm:max-w-2xl pb-8">
         <article>
           <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-gray-800 dark:text-gray-200">
