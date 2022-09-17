@@ -14,7 +14,7 @@ const ptComponents = {
   marks: {
     link: ({ value, children }) => (
       <a
-        className="underline text-gray-800 font-bold"
+        className="underline text-gray-800 font-bold dark:text-gray-200"
         href={value?.href}
         target="_blank"
         rel="noindex nof ollow"
@@ -30,12 +30,12 @@ const ptComponents = {
   },
   block: {
     h2: ({ children }) => (
-      <h2 className="text-3xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800 dark:text-gray-200">
+      <h2 className="text-2xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800 dark:text-gray-200">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-2xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800 dark:text-gray-200">
+      <h3 className="text-xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800 dark:text-gray-200">
         {children}
       </h3>
     ),
@@ -45,7 +45,7 @@ const ptComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc font-sans pb-2 ml-4 text-lg dark:text-gray-200">
+      <ul className="list-disc font-sans p-2 ml-4 text-lg dark:text-gray-200">
         {children}
       </ul>
     ),
