@@ -30,12 +30,12 @@ const ptComponents = {
   },
   block: {
     h2: ({ children }) => (
-      <h2 className="text-2xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800 dark:text-gray-200">
+      <h2 className="text-2xl font-bold pb-4 pt-4 text-gray-800 dark:text-gray-200">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl font-bold pb-4 pt-4 sm:pt-8 text-gray-800 dark:text-gray-200">
+      <h3 className="text-xl font-bold pb-3 pt-3 text-gray-800 dark:text-gray-200">
         {children}
       </h3>
     ),
