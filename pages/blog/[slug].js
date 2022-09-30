@@ -40,7 +40,7 @@ const ptComponents = {
       </h3>
     ),
     normal: ({ children }) => (
-      <p className="font-sans text-lg dark:text-gray-300">{children}</p>
+      <p className="font-sans text-lg pb-2 dark:text-gray-300">{children}</p>
     ),
   },
   list: {
