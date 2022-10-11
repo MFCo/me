@@ -86,7 +86,7 @@ export default function IndexPage({ posts }) {
         <p className="mb-2 dark:text-gray-300">
           Also, I&apos;ve always liked to write,{" "}
           <Link href="/blog" aria-label="Go to my blog">
-            <span className="font-bold">
+            <span className="font-bold cursor-pointer">
               {" "}
               you&apos;ll find most of my articles at my blog
             </span>
@@ -117,7 +117,7 @@ export default function IndexPage({ posts }) {
               slug && (
                 <li className="pb-1 mb-2" key={_id}>
                   <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
-                    <span className="italic underline">{title}</span>
+                    <span className="italic underline cursor-pointer">{title}</span>
                   </Link>{" "}
                   <span className="text-sm">
                     ({new Date(publishedAt).toLocaleDateString("en-GB")})
@@ -127,7 +127,7 @@ export default function IndexPage({ posts }) {
           )}
       </ul>
       <Link href="/blog">
-        <span className="italic font-bold text-gray-800 underline py-2 dark:text-gray-300">
+        <span className="italic font-bold text-gray-800 underline py-2 dark:text-gray-300 cursor-pointer">
           {" "}
           Read all articles
         </span>
