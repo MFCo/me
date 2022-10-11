@@ -58,6 +58,7 @@ export default function IndexPage({ posts }) {
           <a
             className="font-bold"
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.google.com/maps/place/Rauch,+Buenos+Aires+Province,+Argentina/"
           >
             Rauch
@@ -66,6 +67,7 @@ export default function IndexPage({ posts }) {
           <a
             className="font-bold"
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.google.com/maps/place/Berlin/"
           >
             Berlin
@@ -128,8 +130,8 @@ export default function IndexPage({ posts }) {
             href={e.link}
             aria-label={`contact me via ${e.alt}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="p-2 w-12 h-12"
-            rel="noopener"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

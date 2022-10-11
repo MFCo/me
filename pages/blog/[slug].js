@@ -17,7 +17,7 @@ const ptComponents = {
         className="underline text-gray-800 font-bold dark:text-gray-200"
         href={value?.href}
         target="_blank"
-        rel="noindex nof ollow"
+        rel="noindex nofollow"
       >
         {children}
       </a>
