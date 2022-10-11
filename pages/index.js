@@ -48,7 +48,12 @@ export default function IndexPage({ posts }) {
       </h1>
       <p className="text-xl pb-4 text-gray-800 dark:text-gray-200">
         Product ▲ at{" "}
-        <a className="font-bold" target="_blank" href="https://vercel.com">
+        <a
+          className="font-bold"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://vercel.com"
+        >
           Vercel{" "}
         </a>
       </p>
@@ -91,7 +96,12 @@ export default function IndexPage({ posts }) {
         </p>
         <p className="mb-2 dark:text-gray-300">
           Currently, I&apos;m a product manager at{" "}
-          <a className="font-bold" target="_blank" href="https://vercel.com">
+          <a
+            className="font-bold"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://vercel.com"
+          >
             Vercel
           </a>
           .{" "}
