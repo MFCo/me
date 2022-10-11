@@ -10,7 +10,7 @@ export default function IndexPage({ posts }) {
           Blog
         </h1>
         <p className="pb-4 dark:text-gray-300">
-          Here you'll find most of my articles. I write mainly about Product
+          Here you&apos;ll find most of my articles. I write mainly about Product
           Management, Software Engineering, and also personal experiences..
         </p>
         {posts.length > 0 &&

@@ -54,7 +54,7 @@ export default function IndexPage({ posts }) {
       </p>
       <div className="sm:bg-white sm:bg-opacity-100 sm:border-2 sm:p-4 mb-4 rounded-lg dark:sm:bg-gray-700">
         <p className="mb-2 dark:text-gray-300">
-          Hey! My name is Mariano. I'm from{" "}
+          Hey! My name is Mariano. I&apos;m from{" "}
           <a
             className="font-bold"
             target="_blank"
@@ -63,7 +63,7 @@ export default function IndexPage({ posts }) {
           >
             Rauch
           </a>
-          , but I'm living in{" "}
+          , but I&apos;m living in{" "}
           <a
             className="font-bold"
             target="_blank"
@@ -75,19 +75,22 @@ export default function IndexPage({ posts }) {
           .
         </p>
         <p className="mb-2 dark:text-gray-300">
-          I'm a product manager/software engineer who has always been attracted by performance
-          and making development easier for everyone.
+          I&apos;m a product manager/software engineer who has always been
+          attracted by performance and making development easier for everyone.
         </p>
         <p className="mb-2 dark:text-gray-300">
-          Also, I've always liked to write,{" "}
-          <a className="font-bold" href="/blog" aria-label="Go to my blog">
-            you'll find most of my articles at my blog
-          </a>
+          Also, I&apos;ve always liked to write,{" "}
+          <Link href="/blog" aria-label="Go to my blog">
+            <span className="font-bold">
+              {" "}
+              you&apos;ll find most of my articles at my blog
+            </span>
+          </Link>
           . I write mainly about Product Management, Software Engineering, and
           also personal experiences.
         </p>
         <p className="mb-2 dark:text-gray-300">
-          Currently, I'm a product manager at{" "}
+          Currently, I&apos;m a product manager at{" "}
           <a className="font-bold" target="_blank" href="https://vercel.com">
             Vercel
           </a>
@@ -104,7 +107,7 @@ export default function IndexPage({ posts }) {
               slug && (
                 <li className="pb-1 mb-2" key={_id}>
                   <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
-                    <a className="italic underline">{title}</a>
+                    <span className="italic underline">{title}</span>
                   </Link>{" "}
                   <span className="text-sm">
                     ({new Date(publishedAt).toLocaleDateString("en-GB")})
@@ -113,13 +116,12 @@ export default function IndexPage({ posts }) {
               )
           )}
       </ul>
-      <a
-        className="italic font-bold text-gray-800 underline py-2 dark:text-gray-300"
-        href="/blog"
-      >
-        {" "}
-        Read all articles
-      </a>
+      <Link href="/blog">
+        <span className="italic font-bold text-gray-800 underline py-2 dark:text-gray-300">
+          {" "}
+          Read all articles
+        </span>
+      </Link>
       <h2 className="text-lg md:text-2xl font-bold text-gray-800 pb-2 pt-4 mt-2 dark:text-gray-300">
         Contact me
       </h2>

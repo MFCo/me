@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Html } from "next/document";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
 import cn from "classnames";
