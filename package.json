@@ -12,11 +12,11 @@
     "@vercel/analytics": "^0.1.1",
     "classnames": "^2.3.1",
     "groq": "^2.29.3",
-    "next": "latest",
+    "next": "^12.x.x",
     "next-themes": "^0.2.1",
-    "react": "^17.0.2",
+    "react": "latest",
     "react-code-blocks": "^0.0.9-0",
-    "react-dom": "^17.0.2"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.7",
