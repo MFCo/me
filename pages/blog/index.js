@@ -11,7 +11,7 @@ export default function IndexPage({ posts }) {
         </h1>
         <p className="pb-4 dark:text-gray-300">
           Here you&apos;ll find most of my articles. I write mainly about Product
-          Management, Software Engineering, and also personal experiences..
+          Management, Software Engineering, and also some personal experiences.
         </p>
         {posts.length > 0 &&
           posts.map(
