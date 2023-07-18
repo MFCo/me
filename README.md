@@ -1,6 +1,6 @@
 # mcocirio.com
 
-This is the codebase of my current [personal website](https://mcocirio.com) test
+This is the codebase of my current [personal website](https://mcocirio.com)
 
 ### Tech stack
 
