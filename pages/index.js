@@ -59,7 +59,7 @@ export default function IndexPage({ posts }) {
       </p>
       <div className="sm:bg-white sm:bg-opacity-100 sm:border-2 sm:p-4 mb-4 rounded-lg dark:sm:bg-gray-700">
         <p className="mb-2 dark:text-gray-300">
-          Hey! My name is Mariano. I&apos;m from{" "}
+          Hi! My name is Mariano. I&apos;m from{" "}
           <a
             className="font-bold"
             target="_blank"
