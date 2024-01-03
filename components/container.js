@@ -73,7 +73,7 @@ export default function Container(props) {
         </div>
       </main>
       <footer className="w-full max-w-2xl border-t-2 mx-auto pt-4 pb-8 text-gray-600 dark:text-gray-300">
-        Mariano Fernandez Cocirio © 2023
+        Mariano Fernandez Cocirio © 2024
       </footer>
     </div>
   );
