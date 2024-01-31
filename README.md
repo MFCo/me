@@ -1,6 +1,6 @@
 # mcocirio.com
 
-This is the codebaseasdas of my current [personal website](https://mcocirio.com) qweqwe
+This is the codebaseasdas of my current [personal website](https://mcocirio.com)
 
 ### Tech stack
 asdaasdas
