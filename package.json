@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "install": "npm install --legacy-peer-deps",
   },
   "dependencies": {
     "@portabletext/react": "^1.0.6",
