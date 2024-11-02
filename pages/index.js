@@ -42,7 +42,7 @@ export default function IndexPage({ posts }) {
   useEffect(() => setMounted(true), []);
 
   return (
-    <Container>
+    (<Container>
       <h1 className="text-3xl md:text-5xl font-bold text-gray-800 pb-2 dark:text-gray-200">
         Mariano Cocirio
       </h1>
@@ -85,7 +85,7 @@ export default function IndexPage({ posts }) {
         </p>
         <p className="mb-2 dark:text-gray-300">
           Also, I&apos;ve always liked to write,{" "}
-          <Link href="/blog" aria-label="Go to my blog">
+          <Link href="/blog" aria-label="Go to my blog" legacyBehavior>
             <span className="font-bold cursor-pointer">
               {" "}
               you&apos;ll find most of my articles at my blog
@@ -116,7 +116,7 @@ export default function IndexPage({ posts }) {
             ({ _id, title = "", slug = "", publishedAt = "" }) =>
               slug && (
                 <li className="pb-1 mb-2" key={_id}>
-                  <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
+                  <Link href="/blog/[slug]" as={`/blog/${slug.current}`} legacyBehavior>
                     <span className="italic underline cursor-pointer">{title}</span>
                   </Link>{" "}
                   <span className="text-sm">
@@ -126,7 +126,7 @@ export default function IndexPage({ posts }) {
               )
           )}
       </ul>
-      <Link href="/blog">
+      <Link href="/blog" legacyBehavior>
         <span className="italic font-bold text-gray-800 underline py-2 dark:text-gray-300 cursor-pointer">
           {" "}
           Read all articles
@@ -158,7 +158,7 @@ export default function IndexPage({ posts }) {
           </a>
         ))}
       </div>
-    </Container>
+    </Container>)
   );
 }
 
