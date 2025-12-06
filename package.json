@@ -12,7 +12,7 @@
     "@vercel/analytics": "^0.1.1",
     "classnames": "^2.3.1",
     "groq": "^2.29.3",
-    "next": "15.0.2",
+    "next": "15.2.8",
     "next-themes": "^0.2.1",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-code-blocks": "^0.0.9-0",
