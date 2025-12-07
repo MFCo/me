@@ -82,7 +82,7 @@ export default function IndexPage({ posts }) {
           .
         </p>
         <p className="mb-2 dark:text-gray-300">
-          I&apos;m a product manager/systems engineer who has always been
+          I&apos;m a Product Manager/Systems Engineer who has always been
           attracted by performance and making development easier for everyone.
         </p>
         <p className="mb-2 dark:text-gray-300">
