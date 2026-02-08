@@ -57,13 +57,13 @@ export default function IndexPage({ posts }) {
             <div className="flex-1">
               <p className="text-xl md:text-3xl font-bold font-display uppercase leading-tight text-black dark:text-white">
                 Product Manager &<br />
-                System Engineer
+                Systems Engineer
               </p>
             </div>
             <div className="flex-1 text-base md:text-xl text-gray-800 dark:text-gray-300 font-mono">
               <p>
-                Building the future of agents at <strong className="bg-cyan-200 dark:bg-neon-lime text-black px-1">Google DeepMind</strong>.
-                Based in Berlin, from Rauch.
+                Building the future of agents at <a href="https://deepmind.google/" target="_blank" rel="noopener noreferrer" className="bg-cyan-200 dark:bg-neon-lime text-black px-1 hover:bg-cyan-300 dark:hover:bg-[#bfff00] transition-colors inline-block hover:-translate-y-0.5 transform duration-200">Google DeepMind</a>.
+                Based in <a href="https://www.google.com/maps/search/Berlin,%20Germany" target="_blank" rel="noopener noreferrer" className="underline decoration-gray-400 hover:decoration-black dark:hover:decoration-white hover:text-black dark:hover:text-white transition-all">Berlin</a>, from <a href="https://www.google.com/maps/place/Rauch,+Buenos+Aires+Province,+Argentina" target="_blank" rel="noopener noreferrer" className="underline decoration-gray-400 hover:decoration-black dark:hover:decoration-white hover:text-black dark:hover:text-white transition-all">Rauch</a>.
               </p>
             </div>
           </motion.div>
