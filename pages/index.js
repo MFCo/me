@@ -1,16 +1,10 @@
 import Link from "next/link";
 import groq from "groq";
 import client from "../client";
-import { useEffect, useState, useRef } from "react";
-import { useTheme } from "next-themes";
 import Container from "../components/container";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function IndexPage({ posts }) {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
-  useEffect(() => setMounted(true), []);
-
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
@@ -38,8 +32,6 @@ export default function IndexPage({ posts }) {
       }
     },
   };
-
-  if (!mounted) return null;
 
   return (
     <Container className="mt-0" navClassName="bg-transparent">
