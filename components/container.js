@@ -9,8 +9,8 @@ export default function Container(props) {
   const router = useRouter();
   const meta = {
     title: title || "Mariano Cocirio",
-    description: `Product manager, front-end developer, and web enthusiast`,
-    image: image || "https://i.postimg.cc/t4TH7WDw/avatar.png",
+    description: `Product Manager & System Engineer building the future of agents at Google DeepMind.`,
+    image: image || "https://mcocirio.com/icon.svg", // Use the new icon or a proper OG image if available
     type: "website",
   };
 
