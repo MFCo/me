@@ -7,8 +7,7 @@ export default function Container(props) {
   const router = useRouter();
   const meta = {
     title: title || "Mariano Cocirio",
-    description: `Product Manager & System Engineer building the future of agents at Google DeepMind.`,
-    description: `Product Manager & System Engineer building the future of agents at Google DeepMind.`,
+    description: `Product Manager & Systems Engineer building the future of agents at Google DeepMind.`,
     type: "website",
   };
 
@@ -26,7 +25,6 @@ export default function Container(props) {
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Mariano Cocirio" />
         <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
         <meta property="og:title" content={meta.title} />
         <meta name="twitter:site" content="@marianococirio" />
         <meta name="twitter:title" content={meta.title} />
