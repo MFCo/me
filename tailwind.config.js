@@ -6,9 +6,21 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    typography: (theme) => ({}),
-    extend: {},
+    extend: {
+      colors: {
+        'neon-lime': '#D4FF00',
+        'deep-black': '#050505',
+        'surface-dark': '#121212',
+        'surface-light': '#FFFFFF',
+        'neon-border-light': '#000000', // Black border for light mode instead of neon
+        'accent-light': '#0891b2', // Cyan-600 for light mode accents
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Syne', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
+    },
   },
-  variants: {},
   plugins: [require('@tailwindcss/typography')],
 };

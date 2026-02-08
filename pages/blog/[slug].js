@@ -14,7 +14,7 @@ const ptComponents = {
   marks: {
     link: ({ value, children }) => (
       <a
-        className="underline text-gray-800 font-bold dark:text-gray-200"
+        className="underline decoration-accent-light dark:decoration-neon-lime decoration-2 underline-offset-4 hover:bg-accent-light hover:text-white dark:hover:bg-neon-lime dark:hover:text-black transition-all font-bold"
         href={value?.href}
         target="_blank"
         rel="noindex nofollow noopener noreferrer"
@@ -23,34 +23,39 @@ const ptComponents = {
       </a>
     ),
     em: ({ children }) => (
-      <em className="font-mono bg-gray-200 px-1 rounded-sm text-base not-italic dark:text-gray-800 dark:bg-gray-300">
+      <em className="font-mono text-accent-light dark:text-neon-lime not-italic">
         {children}
       </em>
     ),
   },
   block: {
     h2: ({ children }) => (
-      <h2 className="text-2xl font-semibold pb-4 pt-4 text-gray-800 dark:text-gray-200">
+      <h2 className="text-3xl md:text-4xl font-display font-bold mt-12 mb-6 text-black dark:text-white border-l-4 border-accent-light dark:border-neon-lime pl-4">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl font-semibold pb-3 pt-3 text-gray-800 dark:text-gray-200">
+      <h3 className="text-2xl md:text-3xl font-display font-bold mt-8 mb-4 text-black dark:text-white">
         {children}
       </h3>
     ),
     normal: ({ children }) => (
-      <p className="font-sans text-lg pb-2 dark:text-gray-300">{children}</p>
+      <p className="font-sans text-lg leading-relaxed mb-6 text-gray-800 dark:text-gray-300">{children}</p>
+    ),
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-4 border-accent-light dark:border-neon-lime pl-4 my-8 italic text-xl text-gray-900 dark:text-gray-100 bg-surface-light dark:bg-surface-dark p-6">
+        {children}
+      </blockquote>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc font-sans p-2 ml-4 text-lg dark:text-gray-200">
+      <ul className="list-disc list-outside ml-6 mb-6 text-lg text-gray-800 dark:text-gray-300 marker:text-accent-light dark:marker:text-neon-lime">
         {children}
       </ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal font-sans text-lg py-2 ml-8 dark:text-gray-200">
+      <ol className="list-decimal list-outside ml-6 mb-6 text-lg text-gray-800 dark:text-gray-300 marker:text-accent-light dark:marker:text-neon-lime font-mono">
         {children}
       </ol>
     ),
@@ -61,22 +66,35 @@ const ptComponents = {
         return null;
       }
       return (
-        <img
-          className="py-4 mx-auto"
-          alt={value.alt || " "}
-          loading="lazy"
-          src={urlFor(value)}
-        />
+        <figure className="my-10">
+          <img
+            className="w-full h-auto border border-gray-200 dark:border-gray-800"
+            alt={value.alt || " "}
+            loading="lazy"
+            src={urlFor(value)}
+          />
+          {value.caption && (
+            <figcaption className="text-center text-sm text-gray-500 mt-2 font-mono">
+              {value.caption}
+            </figcaption>
+          )}
+        </figure>
       );
     },
     code: ({ value }) => {
       return (
-        <div className="font-mono py-4 text-sm rounded-full">
+        <div className="font-mono my-8 text-sm border border-gray-800 rounded-none overflow-hidden">
           <CodeBlock
             text={value.code}
             language={value.language}
             showLineNumbers
             theme={vs2015}
+            customStyle={{
+              margin: 0,
+              padding: '1.5rem',
+              borderRadius: 0,
+              backgroundColor: '#121212',
+            }}
           />
         </div>
       );
@@ -94,14 +112,26 @@ const Post = ({ post = { title: "Whoops, no article found :(", body: [] } }) => 
       title={`${title} - Mariano Cocirio`}
       image={mainImage && urlFor(mainImage).url()}
     >
-      <div className="max-w-xs sm:max-w-2xl pb-8">
-        <article>
-          <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-gray-800 dark:text-gray-200">
+      <article className="max-w-4xl mx-auto mb-16 px-4">
+        <header className="mb-12 text-center">
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-black dark:text-white leading-tight">
             {title}
           </h1>
+          {mainImage && (
+            <div className="relative w-full aspect-video mb-8 border border-gray-200 dark:border-gray-800">
+              <img
+                className="object-cover w-full h-full"
+                src={urlFor(mainImage).url()}
+                alt={title}
+              />
+            </div>
+          )}
+          <div className="w-20 h-1 bg-accent-light dark:bg-neon-lime mx-auto"></div>
+        </header>
+        <div className="prose prose-lg dark:prose-invert max-w-none font-sans">
           <PortableText value={body} components={ptComponents} />
-        </article>
-      </div>
+        </div>
+      </article>
     </Container>
   );
 };

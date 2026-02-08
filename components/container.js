@@ -15,7 +15,7 @@ export default function Container(props) {
   };
 
   return (
-    (<div className="flex flex-col h-screen justify-between">
+    <div className="flex flex-col min-h-screen justify-between font-sans">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -36,16 +36,16 @@ export default function Container(props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <div className="flex flex-col justify-center">
-        <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 mx-auto pt-4 pb-4 sm:pt-8 sm:pb-16 text-gray-600">
-          <div>
+      <div className={cn("flex flex-col justify-center sticky top-0 z-50 backdrop-blur-md transition-colors duration-300", props.navClassName || "bg-surface-light dark:bg-deep-black bg-opacity-80 dark:bg-opacity-80")}>
+        <nav className="flex items-center justify-between w-full relative max-w-4xl px-4 mx-auto py-6">
+          <div className="flex space-x-6">
             <NextLink
               href="/"
               className={cn(
                 router.asPath === "/"
-                  ? "font-semibold text-gray-600 dark:text-gray-200 border-1 border-gray-600"
-                  : "font-normal text-gray-500 dark:text-gray-400",
-                "inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-500 dark:hover:text-gray-200 transition-all"
+                  ? "text-black dark:text-white font-bold border-b-2 border-accent-light dark:border-neon-lime"
+                  : "text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white",
+                "uppercase tracking-widest text-sm transition-all pb-1 hover:border-b-2 hover:border-gray-300 dark:hover:border-gray-700"
               )}>
 
               <span>Home</span>
@@ -55,9 +55,9 @@ export default function Container(props) {
               href="/blog"
               className={cn(
                 router.asPath.includes("/blog")
-                  ? "font-semibold text-gray-600 dark:text-gray-200 border-1 border-gray-600"
-                  : "font-normal text-gray-500 dark:text-gray-400",
-                "inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-500 dark:hover:text-gray-200 transition-all"
+                  ? "text-black dark:text-white font-bold border-b-2 border-accent-light dark:border-neon-lime"
+                  : "text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white",
+                "uppercase tracking-widest text-sm transition-all pb-1 hover:border-b-2 hover:border-gray-300 dark:hover:border-gray-700"
               )}>
 
               <span>Blog</span>
@@ -67,14 +67,14 @@ export default function Container(props) {
           <ThemeChanger />
         </nav>
       </div>
-      <main className="flex flex-col mb-auto">
-        <div className="flex items-center justify-between w-full relative max-w-2xl mx-auto text-gray-600">
-          <div>{children}</div>
-        </div>
+      <main className={cn("flex flex-col mb-auto w-full mx-auto", props.className || "mt-12")}>
+        {children}
       </main>
-      <footer className="w-full max-w-2xl border-t-2 mx-auto pt-4 pb-8 text-gray-600 dark:text-gray-300">
-        Mariano Fernandez Cocirio © 2026
+      <footer className="w-full max-w-4xl mx-auto px-4 py-12 text-gray-500 text-sm uppercase tracking-widest">
+        <div className="border-t border-gray-200 dark:border-gray-800 pt-8 flex justify-between items-center">
+          <span>Mariano Fernandez Cocirio © 2026</span>
+        </div>
       </footer>
-    </div>)
+    </div>
   );
 }

@@ -1,166 +1,162 @@
 import Link from "next/link";
 import groq from "groq";
 import client from "../client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
 import Container from "../components/container";
-
-const social = [
-  {
-    logo: () => (
-      <path d="M12 2.02c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 12.55l-5.992-4.57h11.983l-5.991 4.57zm0 1.288l-6-4.629v6.771h12v-6.771l-6 4.629z" />
-    ),
-    link: "mailto:marianococirio@gmail.com",
-    alt: "Email",
-  },
-  {
-    logo: () => (
-      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-    ),
-    link: "https://github.com/MFCo",
-    alt: "GitHub",
-  },
-  {
-    logo: () => (
-
-      <g transform="scale(0.02)">
-        <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
-      </g>
-    ), link: "https://x.com/mcocirio",
-    alt: "X",
-  },
-  {
-    logo: () => (
-      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-    ),
-    link: "https://www.linkedin.com/in/mcocirio",
-    alt: "LinkedIn",
-  },
-];
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function IndexPage({ posts }) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   useEffect(() => setMounted(true), []);
 
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+  // Stagger variants for the hero
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 100, opacity: 0, rotate: 5 },
+    show: {
+      y: 0,
+      opacity: 1,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        bounce: 0.4
+      }
+    },
+  };
+
+  if (!mounted) return null;
+
   return (
-    (<Container>
-      <h1 className="text-3xl md:text-5xl font-bold text-gray-800 pb-2 dark:text-gray-200">
-        Mariano Cocirio
-      </h1>
-      <p className="text-xl pb-4 text-gray-800 dark:text-gray-200">
-        Product ▲ at{" "}
-        <a
-          className="font-bold"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://vercel.com"
+    <Container className="mt-0" navClassName="bg-transparent">
+      {/* HERO SECTION */}
+      <section className="min-h-[60vh] md:h-screen flex flex-col justify-center relative md:pt-0">
+        <motion.div
+          style={{ y }}
+          className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-neon-lime opacity-10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-[60] mix-blend-multiply dark:mix-blend-screen"
+        />
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          className="z-10 px-4 md:px-8"
         >
-          Vercel{" "}
-        </a>
-      </p>
-      <div className="sm:bg-white sm:bg-opacity-100 sm:border-2 sm:p-4 mb-4 rounded-lg dark:sm:bg-gray-700">
-        <p className="mb-2 dark:text-gray-300">
-          Hey! My name is Mariano. I&apos;m from{" "}
-          <a
-            className="font-bold"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.google.com/maps/place/Rauch,+Buenos+Aires+Province,+Argentina/"
-          >
-            Rauch
-          </a>
-          , but I&apos;m living in{" "}
-          <a
-            className="font-bold"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.google.com/maps/place/Berlin/"
-          >
-            Berlin
-          </a>
-          .
-        </p>
-        <p className="mb-2 dark:text-gray-300">
-          I&apos;m a Product Manager/Systems Engineer who has always been
-          attracted by performance and making development easier for everyone.
-        </p>
-        <p className="mb-2 dark:text-gray-300">
-          Also, I&apos;ve always liked to write,{" "}
-          <Link href="/blog" aria-label="Go to my blog" legacyBehavior>
-            <span className="font-bold cursor-pointer">
-              {" "}
-              you&apos;ll find most of my articles at my blog
-            </span>
-          </Link>
-          . I write mainly about Product Management, Systems Engineering, and
-          also personal experiences.
-        </p>
-        <p className="mb-2 dark:text-gray-300">
-          Currently, I&apos;m a product manager at{" "}
-          <a
-            className="font-bold"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://vercel.com"
-          >
-            Vercel
-          </a>
-          .{" "}
-        </p>
-      </div>
-      <h2 className="text-xl md:text-2xl font-bold text-gray-800 pb-2 pt-2 dark:text-gray-200">
-        Latest articles
-      </h2>
-      <ul className="list-disc ml-4 pb-2 dark:text-gray-300">
-        {posts.length > 0 &&
-          posts.slice(0, 5).map(
-            ({ _id, title = "", slug = "", publishedAt = "" }) =>
-              slug && (
-                <li className="pb-1 mb-2" key={_id}>
-                  <Link href="/blog/[slug]" as={`/blog/${slug.current}`} legacyBehavior>
-                    <span className="italic underline cursor-pointer">{title}</span>
-                  </Link>{" "}
-                  <span className="text-sm">
-                    ({new Date(publishedAt).toLocaleDateString("en-GB")})
-                  </span>
-                </li>
-              )
-          )}
-      </ul>
-      <Link href="/blog" legacyBehavior>
-        <span className="italic font-bold text-gray-800 underline py-2 dark:text-gray-300 cursor-pointer">
-          {" "}
-          Read all articles
-        </span>
-      </Link>
-      <h2 className="text-lg md:text-2xl font-bold text-gray-800 pb-2 pt-4 mt-2 dark:text-gray-300">
-        Contact me
-      </h2>
-      <div className=" flex mb-10">
-        {social.map((e) => (
-          <a
-            key={e.logo}
-            href={e.link}
-            aria-label={`contact me via ${e.alt}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 w-12 h-12"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="100%"
-              height="100%"
-              preserveAspectRatio="none"
-              viewBox="0 0 24 24"
-              fill={mounted && resolvedTheme === "dark" ? "#e5e7eb" : "#374151"}
+          <motion.h1 variants={itemVariants} className="text-[10vw] md:text-[8vw] leading-[0.85] font-display font-black uppercase text-black dark:text-white mb-6 md:mb-8 tracking-tighter mix-blend-difference break-normal">
+            Mariano<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-neon-lime dark:to-green-500">Cocirio</span>
+          </motion.h1>
+
+          <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-end w-full max-w-4xl border-t-4 border-accent-light dark:border-white pt-6 md:pt-8 mt-4 md:mt-8">
+            <div className="flex-1">
+              <p className="text-xl md:text-3xl font-bold font-display uppercase leading-tight text-black dark:text-white">
+                Product Manager &<br />
+                System Engineer
+              </p>
+            </div>
+            <div className="flex-1 text-base md:text-xl text-gray-800 dark:text-gray-300 font-mono">
+              <p>
+                Building the future of agents at <strong className="bg-cyan-200 dark:bg-neon-lime text-black px-1">Google DeepMind</strong>.
+                Based in Berlin, from Rauch.
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* LATEST ARTICLES - Horizontal/Skew Scroll Vibe */}
+      <section className="py-16 md:py-32 relative">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="px-4 mb-2">
+            <h2 className="text-4xl md:text-6xl font-display font-bold text-black dark:text-white uppercase">
+              Latest
+            </h2>
+          </div>
+          <h2 className="text-5xl md:text-8xl font-display font-black text-transparent stroke-text mb-8 md:mb-16 text-black dark:text-gray-800 opacity-20 select-none absolute top-0 left-0 -z-10 translate-y-8 translate-x-4">
+            LATEST
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 gap-12 px-4">
+          {posts.length > 0 && posts.slice(0, 3).map((post, i) => (
+            <motion.div
+              key={post._id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: i * 0.2 }}
             >
-              {e.logo()}
-            </svg>
-          </a>
-        ))}
-      </div>
-    </Container>)
+              <Link href="/blog/[slug]" as={`/blog/${post.slug.current}`} className="group block relative">
+                <div className="absolute inset-0 bg-accent-light dark:bg-neon-lime translate-x-2 translate-y-2 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-300 -z-10" />
+                <div className="bg-surface-light dark:bg-surface-dark border-2 border-accent-light dark:border-white p-8 md:p-12 transition-transform duration-300 group-hover:-translate-y-1 group-hover:-translate-x-1">
+                  <span className="font-mono text-gray-500 dark:text-neon-lime text-sm tracking-widest uppercase mb-4 block font-bold">
+                    {new Date(post.publishedAt).toLocaleDateString("en-GB", { month: 'long', year: 'numeric' })}
+                  </span>
+                  <h3 className="text-3xl md:text-5xl font-display font-bold text-black dark:text-white leading-tight group-hover:underline decoration-4 underline-offset-8 decoration-accent-light dark:decoration-neon-lime transition-all">
+                    {post.title}
+                  </h3>
+                  <div className="mt-8 flex justify-end">
+                    <span className="text-4xl text-black dark:text-white group-hover:translate-x-2 transition-transform duration-300">→</span>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <Link href="/blog" className="inline-block px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+            View All Archives
+          </Link>
+        </div>
+      </section>
+
+      {/* CONTACT / SOCIALS */}
+      <section className="py-32 border-t-2 border-dashed border-gray-300 dark:border-gray-800 px-4">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <h2 className="text-5xl md:text-7xl font-display font-bold text-black dark:text-white uppercase leading-none">
+            Let's<br />Connect
+          </h2>
+          <div className="flex flex-wrap gap-4">
+            {[
+              { name: 'Twitter', url: 'https://x.com/mcocirio' },
+              { name: 'GitHub', url: 'https://github.com/MFCo' },
+              { name: 'LinkedIn', url: 'https://www.linkedin.com/in/mcocirio' },
+              { name: 'Email', url: 'mailto:marianococirio@gmail.com' }
+            ].map((social) => (
+              <a 
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl md:text-2xl font-display font-bold uppercase text-gray-500 dark:text-gray-400 hover:text-accent-light dark:hover:text-neon-lime transition-colors"
+              >
+                {social.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    </Container >
   );
 }
 
