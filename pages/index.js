@@ -47,7 +47,7 @@ export default function IndexPage({ posts }) {
       <section className="min-h-[60vh] md:h-screen flex flex-col justify-center relative md:pt-0">
         <motion.div
           style={{ y }}
-          className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-neon-lime opacity-10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-[60] mix-blend-multiply dark:mix-blend-screen"
+          className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-cyan-500 dark:bg-neon-lime opacity-10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-[60] mix-blend-multiply dark:mix-blend-screen"
         />
 
         <motion.div
