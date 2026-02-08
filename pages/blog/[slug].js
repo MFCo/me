@@ -1,6 +1,5 @@
 import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
-import ErrorPage from 'next/error'
 import { PortableText } from "@portabletext/react";
 import client from "../../client";
 import { CodeBlock, vs2015 } from "react-code-blocks";
@@ -102,9 +101,16 @@ const ptComponents = {
   },
 };
 
-const Post = ({ post = { title: "Whoops, no article found :(", body: [] } }) => {
+const Post = ({ post }) => {
   if (!post) {
-    return <ErrorPage statusCode={404} />
+    // Fallback if fallback: true and page is not yet generated
+    return (
+      <Container>
+        <div className="flex justify-center items-center min-h-[50vh]">
+          <p>Loading...</p>
+        </div>
+      </Container>
+    )
   }
   const { title = "Missing title", body = [], mainImage } = post;
   return (
@@ -155,6 +161,13 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { slug = "" } = context.params;
   const post = await client.fetch(query, { slug });
+
+  if (!post) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       post,

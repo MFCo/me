@@ -7,6 +7,7 @@ export default function Document(props) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
       </Head>
       <body className="bg-surface-light dark:bg-deep-black text-gray-900 dark:text-gray-100 min-h-screen selection:bg-neon-lime selection:text-black">
         <Main />
