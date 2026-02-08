@@ -10,7 +10,7 @@ export default function Container(props) {
   const meta = {
     title: title || "Mariano Cocirio",
     description: `Product Manager & System Engineer building the future of agents at Google DeepMind.`,
-    image: image || "https://mcocirio.com/icon.svg", // Use the new icon or a proper OG image if available
+    description: `Product Manager & System Engineer building the future of agents at Google DeepMind.`,
     type: "website",
   };
 
@@ -29,12 +29,10 @@ export default function Container(props) {
         <meta property="og:site_name" content="Mariano Cocirio" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:title" content={meta.title} />
         <meta name="twitter:site" content="@marianococirio" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
       </Head>
       <div className={cn("flex flex-col justify-center sticky top-0 z-50 backdrop-blur-md transition-colors duration-300", props.navClassName || "bg-surface-light dark:bg-deep-black bg-opacity-80 dark:bg-opacity-80")}>
         <nav className="flex items-center justify-between w-full relative max-w-4xl px-4 mx-auto py-6">
